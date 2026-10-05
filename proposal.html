@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>For the Principal &middot; Maples Tech Club, Maples Academy Khatauli</title>
+<meta name="description" content="Summary of the formal application to the Principal of Maples Academy, Khatauli, with safeguards, costs, one-year targets and a downloadable 13-page PDF.">
+<meta name="author" content="Harsh, Class XII, Roll No. 13, Maples Academy Khatauli">
+<meta name="theme-color" content="#070b16">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#070b16; --bg2:#0b1224; --panel:#111a30; --panel2:#0e1628;
+  --line:rgba(148,178,255,.15); --line2:rgba(148,178,255,.28);
+  --tx:#e8eeff; --tx2:#a9b8dc; --tx3:#7488b3;
+  --cy:#22d3ee; --vi:#a78bfa; --gr:#34d399; --am:#fbbf24; --rd:#fb7185;
+  --grad:linear-gradient(135deg,#22d3ee 0%,#818cf8 50%,#a78bfa 100%);
+  --r:16px; --rs:10px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg); color:var(--tx); line-height:1.68;
+  font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',Arial,sans-serif;
+  font-size:16px; overflow-x:hidden;
+}
+body::before{
+  content:""; position:fixed; inset:0; z-index:-2; pointer-events:none;
+  background:
+    radial-gradient(900px 520px at 12% -8%, rgba(34,211,238,.16), transparent 62%),
+    radial-gradient(820px 480px at 92% 4%, rgba(167,139,250,.15), transparent 60%),
+    radial-gradient(700px 600px at 50% 108%, rgba(52,211,153,.08), transparent 60%);
+}
+body::after{
+  content:""; position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.4;
+  background-image:linear-gradient(rgba(148,178,255,.045) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(148,178,255,.045) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(ellipse 100% 70% at 50% 0%,#000 40%,transparent 100%);
+  -webkit-mask-image:radial-gradient(ellipse 100% 70% at 50% 0%,#000 40%,transparent 100%);
+}
+a{color:var(--cy);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+
+/* ── nav ── */
+header.nav{position:sticky;top:0;z-index:60;backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);background:rgba(7,11,22,.82);
+  border-bottom:1px solid var(--line)}
+.navin{max-width:1160px;margin:0 auto;padding:11px 22px;display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;flex-shrink:0}
+.brand:hover{text-decoration:none}
+.logo{width:38px;height:38px;flex-shrink:0}
+.bname{font-weight:800;font-size:16.5px;letter-spacing:-.3px;color:var(--tx);line-height:1.15}
+.bsub{font-size:10.5px;color:var(--tx3);letter-spacing:1.3px;text-transform:uppercase;font-weight:600}
+nav.links{margin-left:auto;display:flex;gap:3px;align-items:center;flex-wrap:wrap}
+nav.links a{padding:8px 13px;border-radius:9px;font-size:14px;font-weight:600;
+  color:var(--tx2);transition:.16s;white-space:nowrap}
+nav.links a:hover{background:rgba(148,178,255,.09);color:var(--tx);text-decoration:none}
+nav.links a.on{color:var(--tx);background:rgba(34,211,238,.13);
+  box-shadow:inset 0 0 0 1px rgba(34,211,238,.3)}
+nav.links a.cta{background:var(--grad);color:#050810;font-weight:800;margin-left:6px}
+nav.links a.cta:hover{filter:brightness(1.1);text-decoration:none}
+.burger{display:none;margin-left:auto;background:rgba(148,178,255,.1);border:1px solid var(--line2);
+  color:var(--tx);width:40px;height:38px;border-radius:9px;font-size:18px;cursor:pointer;line-height:1}
+
+/* ── sections ── */
+section{padding:62px 0}
+.hero{padding:76px 0 56px}
+h1{font-size:clamp(31px,5.4vw,55px);line-height:1.08;font-weight:850;letter-spacing:-1.6px;
+   margin-bottom:18px}
+h2{font-size:clamp(23px,3.3vw,33px);line-height:1.2;font-weight:800;letter-spacing:-.8px;
+   margin-bottom:12px}
+h3{font-size:19px;font-weight:750;letter-spacing:-.3px;margin-bottom:8px}
+h4{font-size:15.5px;font-weight:750;margin-bottom:6px}
+p{color:var(--tx2);margin-bottom:13px}
+.lead{font-size:18.5px;color:var(--tx2);max-width:74ch}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:800;
+  letter-spacing:1.9px;text-transform:uppercase;color:var(--cy);
+  background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.28);
+  padding:6px 14px;border-radius:99px;margin-bottom:20px;line-height:1.5}
+.shead{margin-bottom:30px;max-width:80ch}
+.shead p{font-size:16.5px}
+.kicker{font-size:11.5px;font-weight:800;letter-spacing:1.9px;text-transform:uppercase;
+  color:var(--vi);margin-bottom:9px}
+
+/* ── buttons ── */
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 24px;border-radius:12px;
+  font-weight:750;font-size:15px;transition:.18s;border:1px solid transparent;cursor:pointer}
+.btn:hover{text-decoration:none;transform:translateY(-2px)}
+.btn-p{background:var(--grad);color:#050810;box-shadow:0 10px 28px -10px rgba(34,211,238,.6)}
+.btn-p:hover{box-shadow:0 16px 36px -10px rgba(34,211,238,.75)}
+.btn-s{background:rgba(148,178,255,.07);color:var(--tx);border-color:var(--line2)}
+.btn-s:hover{background:rgba(148,178,255,.13);border-color:var(--cy)}
+
+/* ── cards / grid ── */
+.grid{display:grid;gap:17px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:linear-gradient(160deg,rgba(255,255,255,.045),rgba(255,255,255,.015));
+  border:1px solid var(--line);border-radius:var(--r);padding:22px;transition:.2s}
+.card:hover{border-color:var(--line2);transform:translateY(-3px);
+  box-shadow:0 18px 44px -22px rgba(0,0,0,.85)}
+.card p:last-child{margin-bottom:0}
+.card .ic{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;
+  margin-bottom:13px;background:rgba(34,211,238,.12);border:1px solid rgba(34,211,238,.25)}
+svg.i{width:18px;height:18px;flex:0 0 auto;display:inline-block;vertical-align:-3px;
+  fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.card .ic svg.i{width:21px;height:21px;stroke:var(--cy)}
+.eyebrow svg.i{width:14px;height:14px;stroke:var(--cy)}
+.btn svg.i{width:17px;height:17px}
+.lnk svg.i{width:18px;height:18px;stroke:var(--cy)}
+.card.vi .ic{background:rgba(167,139,250,.12);border-color:rgba(167,139,250,.25)}
+.card.vi .ic svg.i{stroke:var(--vi)}
+.card.gr .ic{background:rgba(52,211,153,.12);border-color:rgba(52,211,153,.25)}
+.card.gr .ic svg.i{stroke:var(--gr)}
+.card.am .ic{background:rgba(251,191,36,.12);border-color:rgba(251,191,36,.25)}
+.card.am .ic svg.i{stroke:var(--am)}
+.card small{color:var(--tx3);font-size:13.5px}
+
+/* ── stats ── */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:38px}
+.stat{background:rgba(148,178,255,.05);border:1px solid var(--line);border-radius:var(--r);
+  padding:19px;text-align:center}
+.stat b{display:block;font-size:clamp(23px,3.4vw,31px);font-weight:850;letter-spacing:-1px;
+  line-height:1.1;margin-bottom:3px}
+.stat span{font-size:12.5px;color:var(--tx3);font-weight:600;line-height:1.35;display:block}
+
+/* ── tables ── */
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);
+  background:rgba(148,178,255,.028);-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:14.3px;min-width:640px}
+thead th{background:rgba(34,211,238,.1);color:var(--tx);text-align:left;padding:13px 15px;
+  font-weight:750;font-size:12.5px;letter-spacing:.7px;text-transform:uppercase;
+  border-bottom:1px solid var(--line2);white-space:nowrap}
+tbody td{padding:13px 15px;border-bottom:1px solid var(--line);color:var(--tx2);
+  vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover td{background:rgba(148,178,255,.045)}
+td strong,td b{color:var(--tx);font-weight:700}
+.free{color:var(--gr);font-weight:800;white-space:nowrap}
+.paid{color:var(--am);font-weight:800;white-space:nowrap}
+
+/* ── pills / tags ── */
+.pill{display:inline-block;padding:3px 10px;border-radius:99px;font-size:11.5px;font-weight:750;
+  letter-spacing:.3px;white-space:nowrap}
+.p-g{background:rgba(52,211,153,.14);color:var(--gr);border:1px solid rgba(52,211,153,.3)}
+.p-c{background:rgba(34,211,238,.13);color:var(--cy);border:1px solid rgba(34,211,238,.3)}
+.p-v{background:rgba(167,139,250,.14);color:var(--vi);border:1px solid rgba(167,139,250,.3)}
+.p-a{background:rgba(251,191,36,.13);color:var(--am);border:1px solid rgba(251,191,36,.3)}
+.p-r{background:rgba(251,113,133,.13);color:var(--rd);border:1px solid rgba(251,113,133,.3)}
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}
+
+/* ── notes ── */
+.note{border-left:3px solid var(--cy);background:rgba(34,211,238,.06);padding:16px 19px;
+  border-radius:0 var(--rs) var(--rs) 0;margin:20px 0}
+.note.warn{border-color:var(--am);background:rgba(251,191,36,.06)}
+.note.good{border-color:var(--gr);background:rgba(52,211,153,.06)}
+.note.vi{border-color:var(--vi);background:rgba(167,139,250,.06)}
+.note h4{color:var(--tx)}
+.note p:last-child{margin-bottom:0}
+.note strong{color:var(--tx)}
+
+/* ── steps / timeline ── */
+.steps{position:relative;padding-left:40px;margin-top:8px}
+.steps::before{content:"";position:absolute;left:14px;top:10px;bottom:10px;width:2px;
+  background:linear-gradient(180deg,var(--cy),var(--vi),transparent)}
+.step{position:relative;margin-bottom:26px}
+.step:last-child{margin-bottom:0}
+.step .num{position:absolute;left:-40px;top:0;width:30px;height:30px;border-radius:50%;
+  background:var(--bg2);border:2px solid var(--cy);display:grid;place-items:center;
+  font-weight:800;font-size:13px;color:var(--cy)}
+.step h4{font-size:17px;margin-bottom:5px}
+.step p{margin-bottom:7px;font-size:15px}
+
+/* ── lists ── */
+ul.ck{list-style:none;margin:10px 0}
+ul.ck li{position:relative;padding-left:27px;margin-bottom:9px;color:var(--tx2)}
+ul.ck li::before{content:"";position:absolute;left:0;top:9px;width:14px;height:8px;
+  border-left:2.2px solid var(--gr);border-bottom:2.2px solid var(--gr);
+  transform:rotate(-45deg)}
+ul.ar{list-style:none;margin:10px 0}
+ul.ar li{position:relative;padding-left:23px;margin-bottom:9px;color:var(--tx2)}
+ul.ar li::before{content:"\203A";position:absolute;left:4px;top:-2px;color:var(--cy);
+  font-size:20px;font-weight:800}
+ul.ck li strong,ul.ar li strong{color:var(--tx)}
+ol.no{counter-reset:n;list-style:none;margin:10px 0}
+ol.no li{counter-increment:n;position:relative;padding-left:34px;margin-bottom:11px;color:var(--tx2)}
+ol.no li::before{content:counter(n);position:absolute;left:0;top:2px;width:23px;height:23px;
+  border-radius:7px;background:rgba(34,211,238,.13);border:1px solid rgba(34,211,238,.3);
+  color:var(--cy);font-size:12.5px;font-weight:800;display:grid;place-items:center}
+ol.no li strong{color:var(--tx)}
+
+/* ── link rows ── */
+.lnk{display:flex;align-items:center;gap:11px;padding:12px 15px;border-radius:var(--rs);
+  background:rgba(148,178,255,.045);border:1px solid var(--line);transition:.16s;
+  color:var(--tx2);font-size:14.5px;font-weight:600}
+.lnk:hover{background:rgba(34,211,238,.09);border-color:rgba(34,211,238,.35);
+  color:var(--tx);text-decoration:none;transform:translateX(3px)}
+.lnk span.u{margin-left:auto;font-size:12px;color:var(--tx3);font-weight:500;
+  font-family:ui-monospace,Menlo,Consolas,monospace}
+.lnkgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
+
+/* ── hero panel ── */
+.hpanel{background:linear-gradient(160deg,rgba(34,211,238,.08),rgba(167,139,250,.05));
+  border:1px solid var(--line2);border-radius:20px;padding:26px}
+.hpanel .row{display:flex;justify-content:space-between;align-items:center;gap:12px;
+  padding:11px 0;border-bottom:1px dashed var(--line)}
+.hpanel .row:last-child{border-bottom:none}
+.hpanel .row span:first-child{color:var(--tx2);font-size:14.5px}
+.hpanel .row span:last-child{font-weight:800;font-size:14.5px;text-align:right}
+.split{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:start}
+.split.mid{align-items:center}
+
+/* ── cta band ── */
+.band{background:linear-gradient(135deg,rgba(34,211,238,.1),rgba(167,139,250,.09));
+  border:1px solid var(--line2);border-radius:20px;padding:36px;text-align:center;margin-top:8px}
+.band h2{margin-bottom:10px}
+.band .btns{justify-content:center}
+
+/* ── footer ── */
+footer{border-top:1px solid var(--line);margin-top:34px;padding:38px 0 30px;
+  background:rgba(7,11,22,.6)}
+.fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:26px;margin-bottom:26px}
+footer h5{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);
+  margin-bottom:11px;font-weight:800}
+footer ul{list-style:none}
+footer ul li{margin-bottom:7px}
+footer ul li a{color:var(--tx2);font-size:14px}
+footer ul li a:hover{color:var(--cy)}
+.fbot{border-top:1px solid var(--line);padding-top:18px;display:flex;
+  justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--tx3)}
+.disc{font-size:12.5px;color:var(--tx3);line-height:1.6;margin-top:14px;
+  padding:13px 16px;background:rgba(148,178,255,.035);border:1px solid var(--line);
+  border-radius:var(--rs)}
+
+/* ── misc ── */
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13.5px;
+  background:rgba(34,211,238,.09);padding:2px 5px;border-radius:5px;color:var(--cy)}
+.hr{height:1px;background:var(--line);margin:44px 0}
+.anchor{scroll-margin-top:86px}
+.tocbar{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 4px}
+.tocbar a{font-size:13.5px;font-weight:650;padding:7px 14px;border-radius:99px;
+  background:rgba(148,178,255,.06);border:1px solid var(--line);color:var(--tx2)}
+.tocbar a:hover{border-color:var(--cy);color:var(--tx);text-decoration:none}
+.cent{text-align:center}
+
+@media(max-width:940px){
+  .g4{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(2,1fr)}
+  .split{grid-template-columns:1fr;gap:26px}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
+  .burger{display:block}
+  nav.links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;
+    align-items:stretch;gap:4px;padding:12px 18px 18px;background:rgba(9,14,28,.99);
+    border-bottom:1px solid var(--line2)}
+  nav.links.open{display:flex}
+  nav.links a{padding:11px 14px}
+  nav.links a.cta{margin-left:0;text-align:center}
+  .g2,.g3,.g4{grid-template-columns:1fr}
+  .lnkgrid{grid-template-columns:1fr}
+  section{padding:46px 0}
+  .hero{padding:48px 0 38px}
+  .band{padding:26px 20px}
+  .steps{padding-left:34px}
+  .step .num{left:-34px;width:26px;height:26px;font-size:12px}
+}
+@media(max-width:480px){
+  .stats{grid-template-columns:1fr 1fr}
+  .fgrid{grid-template-columns:1fr}
+  .btn{width:100%;justify-content:center}
+  .pill{white-space:normal}
+}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="navin">
+    <a class="brand" href="index.html"><svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
+<defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#22d3ee"/><stop offset=".55" stop-color="#818cf8"/>
+<stop offset="1" stop-color="#a78bfa"/></linearGradient></defs>
+<rect x="2" y="2" width="44" height="44" rx="12" fill="url(#lg)" opacity=".16"/>
+<rect x="2.9" y="2.9" width="42.2" height="42.2" rx="11.2" fill="none" stroke="url(#lg)" stroke-width="1.7"/>
+<path d="M24 9c3.4 3.6 5.2 7.3 5.2 11 0 2.6-1 4.6-2.2 6.3l3.1 1.1-4 1.7 1 3.4-3.4-2-0.4 4.2h-1.6l-.4-4.2-3.4 2 1-3.4-4-1.7 3.1-1.1c-1.2-1.7-2.2-3.7-2.2-6.3 0-3.7 1.8-7.4 5.2-11z"
+ fill="url(#lg)" opacity=".92"/>
+<path d="M15.5 38.5h17" stroke="url(#lg)" stroke-width="2.1" stroke-linecap="round"/>
+<circle cx="13.2" cy="21.5" r="1.7" fill="#22d3ee"/><circle cx="34.8" cy="21.5" r="1.7" fill="#a78bfa"/>
+</svg>
+      <span><span class="bname">Maples Tech Club</span><br>
+      <span class="bsub">Maples Academy &middot; Khatauli</span></span></a>
+    <button class="burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="about.html">The Club</a>
+      <a href="benefits.html">Benefits</a>
+      <a href="registration.html">Registration</a>
+      <a href="join.html">Join Us</a>
+      <a href="proposal.html" class="cta">For the Principal</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+<section class="hero" style="padding-bottom:22px"><div class="wrap">
+  <div class="split mid">
+    <div>
+      <span class="eyebrow"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M8 13h8M8 17h6"/></svg> For the Principal</span>
+      <h1>The application, <span class="grad">in summary</span></h1>
+      <p class="lead">Respected Sir, this page is a short summary of a formal application submitted
+      by Harsh, Class XII, Roll No. 13, asking for permission to start the Maples Tech Club and to begin the
+      school's technology registrations. The full 13-page document, with its annexures and an order sheet
+      for your signature, can be downloaded below.</p>
+      <div class="btns">
+        <a class="btn btn-p" href="Maples_Tech_Club_Proposal_Principal.pdf" download><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><path d="M12 15V3"/></svg> Download the application (PDF)</a>
+        <a class="btn btn-s" href="registration.html">See the registration roadmap &rarr;</a>
+      </div>
+    </div>
+    <div class="hpanel">
+      <div class="kicker">What is being asked for</div>
+      <div class="row"><span>Permission to form the club</span><span class="free">Nil cost</span></div>
+      <div class="row"><span>One Faculty Advisor</span><span class="free">Nil cost</span></div>
+      <div class="row"><span>One Coordinator <small>(may be the same teacher)</small></span><span class="free">Nil cost</span></div>
+      <div class="row"><span>Computer lab, 2 hrs / week</span><span class="free">Nil cost</span></div>
+      <div class="row"><span>Signatures on the sign-up forms</span><span class="free">Nil cost</span></div>
+      <div class="row"><span>Domain to buy</span><span class="free">None &mdash; already owned</span></div>
+      <div class="row"><span>Consumables (optional)</span><span class="paid">&#8377;3,000&ndash;6,000 / yr</span></div>
+      <div class="row"><span>Notice board space</span><span class="free">Nil cost</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="anchor" style="padding-top:8px"><div class="wrap">
+  <div class="note vi">
+    <h4>The essence of the request</h4>
+    <p>The school is not being asked to spend money. Not one rupee. Maples Academy already owns
+    <span class="mono">mapleskhatauli.com</span>, so there is no domain to buy, and every programme in
+    this proposal is free to verified schools. What is being asked for is <strong>permission</strong>,
+    <strong>one teacher as Faculty Advisor</strong> to supervise the sessions, <strong>one teacher as
+    Coordinator</strong> to hold the Google Admin Console, and the computer laboratory for
+    <strong>two hours a week</strong>.</p>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="shead"><div class="kicker">Activation</div>
+    <h2>What the school's IT administration has to do</h2>
+    <p>Two steps, and the club will do the legwork for both under the Coordinator's supervision.</p></div>
+  <div class="grid g2">
+    <div class="card gr"><div class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>1. Verify our educational eligibility with Google</h3>
+      <p>Using the school's official domain, <span class="mono">mapleskhatauli.com</span>. Google needs
+      two things: proof that the school controls the domain, which is a short record added to the DNS
+      settings, and proof that Maples Academy is a recognised educational institution, which is the CBSE
+      affiliation certificate. Once that is accepted, the school is on record with Google as a school and
+      the free education editions become available.</p></div>
+    <div class="card"><div class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 17h-7a5 5 0 1 1 1-9.9A6 6 0 1 1 18 17z"/></svg></div><h3>2. Set up the Google Admin Console</h3>
+      <p>This is the school's permanent control panel. From it the Coordinator creates and closes student
+      and teacher accounts, organises users by class, sets the data privacy and content-filtering rules,
+      and decides which apps each class is allowed to use. The Principal and the Coordinator hold the
+      passwords. No student is ever given administrator rights.</p></div>
+  </div>
+  <div class="note warn">
+    <h4>Two things the school office should confirm first</h4>
+    <p>Who holds the account that <span class="mono">mapleskhatauli.com</span> was registered through, and
+    whether any email is already running on that domain. If email already exists there, it is declared
+    during the sign-up and carries on working. If it does not, Google simply becomes the school's mail
+    provider. Either way the plan is the same. The office only has to tell the Coordinator which case
+    applies.</p>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="shead"><div class="kicker">Concerns</div>
+    <h2>Every reasonable objection, answered</h2>
+    <p>These are the questions any principal would ask. They are answered here rather than dodged.</p></div>
+  <div class="tw"><table>
+    <thead><tr><th style="width:27%">Concern</th><th>Safeguard offered</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Will studies suffer?</strong></td>
+        <td>One session a week, after school hours. <strong>Nothing at all in the four weeks before any
+        examination</strong>, or during the board examinations. If a member's marks fall, the Faculty Advisor
+        keeps them out until they recover.</td></tr>
+      <tr><td><strong>Who controls the accounts and the data?</strong></td>
+        <td><strong>The school does.</strong> The school owns the domain and every account made under it. The
+        administrator passwords stay with the Coordinator and the Principal. No student gets administrator
+        rights. Accounts are switched off when a student leaves. Google Workspace for Education and Microsoft 365
+        Education are built for exactly this kind of control, through a single admin console.</td></tr>
+      <tr><td><strong>Will students misuse internet access?</strong></td>
+        <td>The laboratory is never used without a teacher present. Every member signs the code of conduct, and
+        so does a parent or guardian. Content filtering is switched on at administrator level for all school
+        accounts. Anything that goes wrong is reported to the Principal the same day.</td></tr>
+      <tr><td><strong>Is the school's reputation at risk online?</strong></td>
+        <td>Nothing goes out in the school's name without the Faculty Advisor approving it in writing first.
+        That covers the website, notices, posters, photographs and social media. Photographs of students are only
+        put up with their consent.</td></tr>
+      <tr><td><strong>What happens when the founder leaves after Class XII?</strong></td>
+        <td>The structure is built against exactly that. Every squad has a junior deputy. The Core Committee is
+        elected fresh every year. All records, passwords and files are handed to the Faculty Advisor before the
+        outgoing batch leaves, and 40% of every intake is kept for Classes VI&ndash;IX.</td></tr>
+      <tr><td><strong>Will this cost the school money later?</strong></td>
+        <td>The free plans named here are these companies' standing education offers. There is no obligation to
+        upgrade to a paid plan, and the school can stop using any of them whenever it wants. <strong>No contract
+        ties the school to paying anything later.</strong></td></tr>
+      <tr><td><strong>Is AI use appropriate for school students?</strong></td>
+        <td>The club teaches students to <em>understand</em> AI: what these systems are, where they get things
+        wrong, how to check them, and why handing in their output as your own work is dishonest. All of it is
+        supervised, on approved free plans, and submitting AI work without saying so is treated as copying.</td></tr>
+    </tbody></table></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="shead"><div class="kicker">Accountability</div>
+    <h2>Judge us against this, after one year</h2>
+    <p>I am asking for the club to be checked against these after twelve months, and closed without any
+    argument from me if it has clearly not met them.</p></div>
+  <div class="tw"><table>
+    <thead><tr><th>By the end of Year One</th><th style="width:130px">Target</th></tr></thead>
+    <tbody>
+      <tr><td><span class="mono">mapleskhatauli.com</span> verified with Google and school accounts live</td><td class="free">Yes</td></tr>
+      <tr><td>Official school email accounts issued to teachers and to Classes IX&ndash;XII</td><td class="free">100%</td></tr>
+      <tr><td>Google Workspace for Education and Microsoft 365 Education active</td><td class="free">Both</td></tr>
+      <tr><td>Official school website live, built and maintained by students</td><td class="free">Yes</td></tr>
+      <tr><td>Students attending at least one club session</td><td class="free">150 +</td></tr>
+      <tr><td>Core members with a completed, documented project</td><td class="free">40 +</td></tr>
+      <tr><td>Workshops and awareness sessions conducted</td><td class="free">20 +</td></tr>
+      <tr><td>External competitions or olympiads entered</td><td class="free">3 +</td></tr>
+      <tr><td>Teachers trained in Google Classroom or Microsoft Teams</td><td class="free">10 +</td></tr>
+      <tr><td>Public technology exhibition for parents and the community</td><td class="free">1</td></tr>
+      <tr><td>Licence cost to the school for all software obtained</td><td class="free">&#8377;0</td></tr>
+    </tbody></table></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="shead"><div class="kicker">Contents</div><h2>What is inside the PDF</h2></div>
+  <div class="grid g3">
+    <div class="card"><div class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M8 13h8M8 17h6"/></svg></div><h4>The application letter</h4>
+      <p><small>A formal letter to the Principal setting out the two-part request and the reasoning behind
+      it, with space for the proposer's and faculty advisor's signatures.</small></p></div>
+    <div class="card vi"><div class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h4>Annexure A &mdash; Club Charter</h4>
+      <p><small>Identity, definition, vision and mission, the eight objectives, the six-tier structure, the
+      six squads, the annual calendar and the examination-discipline rule.</small></p></div>
+    <div class="card gr"><div class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.2 6.4L21 11l-6.8 2.6L12 20l-2.2-6.4L3 11l6.8-2.6z"/></svg></div><h4>Annexure B &mdash; Schedule of Benefits</h4>
+      <p><small>Every institutional and student benefit, with eligibility, cost and the provider's official
+      web address for independent verification &mdash; including a frank note on what is <em>not</em>
+      available in India.</small></p></div>
+    <div class="card am"><div class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></div><h4>Annexure C &mdash; Registration Roadmap</h4>
+      <p><small>Eight phases starting from the domain the school already owns, with the documents needed,
+      the owner of each step, realistic timings and the total cost.</small></p></div>
+    <div class="card"><div class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M6 3h12v6a6 6 0 0 1-12 0z"/><path d="M9 21h6M12 15v6"/></svg></div><h4>Annexure D &mdash; Selection &amp; Conduct</h4>
+      <p><small>The two membership tracks, the five selection stages with weights, the fairness principles,
+      renewal and removal rules, and the nine-point code of conduct for signature.</small></p></div>
+    <div class="card gr"><div class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><h4>Annexures E &amp; F</h4>
+      <p><small>Safeguards against every foreseeable concern, the precise list of what is requested from the
+      school, the one-year target sheet, and an <strong>order sheet</strong> ready for the Principal's
+      signature and seal.</small></p></div>
+  </div>
+</div></section>
+
+<section style="padding-top:12px"><div class="wrap">
+  <div class="band">
+    <span class="eyebrow"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><path d="M12 15V3"/></svg> Download</span>
+    <h2>13 pages. Print it, read it, sign the last one.</h2>
+    <p class="lead" style="margin:0 auto">A4, laid out for printing, with a tear-off order sheet at the end
+    for the Principal's decision, the teacher nominated as advisor, the laboratory timing and the amount
+    sanctioned.</p>
+    <div class="btns">
+      <a class="btn btn-p" href="Maples_Tech_Club_Proposal_Principal.pdf" download><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><path d="M12 15V3"/></svg> Maples_Tech_Club_Proposal_Principal.pdf</a>
+      <a class="btn btn-s" href="benefits.html">Verify every claim &rarr;</a>
+    </div>
+    <p style="margin-top:20px;font-size:14.5px;color:var(--tx3)">
+      &ldquo;Every school in the country is being told to go digital. Most are waiting for someone to give
+      them the means to do it. Maples Academy does not have to wait. It already qualifies for all of this,
+      and it has students who are willing to do the work. I am asking for permission, one teacher, and two
+      hours a week.&rdquo;<br>
+      <strong style="color:var(--tx2)">Harsh, Class XII, Roll No. 13</strong></p>
+  </div>
+</div></section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:12px"><svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
+<defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#22d3ee"/><stop offset=".55" stop-color="#818cf8"/>
+<stop offset="1" stop-color="#a78bfa"/></linearGradient></defs>
+<rect x="2" y="2" width="44" height="44" rx="12" fill="url(#lg)" opacity=".16"/>
+<rect x="2.9" y="2.9" width="42.2" height="42.2" rx="11.2" fill="none" stroke="url(#lg)" stroke-width="1.7"/>
+<path d="M24 9c3.4 3.6 5.2 7.3 5.2 11 0 2.6-1 4.6-2.2 6.3l3.1 1.1-4 1.7 1 3.4-3.4-2-0.4 4.2h-1.6l-.4-4.2-3.4 2 1-3.4-4-1.7 3.1-1.1c-1.2-1.7-2.2-3.7-2.2-6.3 0-3.7 1.8-7.4 5.2-11z"
+ fill="url(#lg)" opacity=".92"/>
+<path d="M15.5 38.5h17" stroke="url(#lg)" stroke-width="2.1" stroke-linecap="round"/>
+<circle cx="13.2" cy="21.5" r="1.7" fill="#22d3ee"/><circle cx="34.8" cy="21.5" r="1.7" fill="#a78bfa"/>
+</svg>
+          <span><span class="bname">Maples Tech Club</span><br>
+          <span class="bsub">Maples Academy &middot; Khatauli</span></span></a>
+        <p style="font-size:14px;max-width:34ch">A student-run technology society proposed for
+        Maples Academy, Khatauli, Uttar Pradesh &mdash; teaching computing, AI, robotics and design
+        by building real things.</p>
+        <p style="font-size:13.5px;color:var(--tx3);margin-top:8px">
+        Motto &mdash; <em>Learn it. Build it. Ship it.</em></p>
+      </div>
+      <div><h5>The Club</h5><ul>
+        <li><a href="about.html">Purpose &amp; vision</a></li>
+        <li><a href="about.html#squads">The six squads</a></li>
+        <li><a href="about.html#structure">Structure</a></li>
+        <li><a href="about.html#calendar">Annual calendar</a></li>
+        <li><a href="join.html">Selection process</a></li>
+        <li><a href="join.html#conduct">Code of conduct</a></li>
+      </ul></div>
+      <div><h5>Benefits</h5><ul>
+        <li><a href="benefits.html#school">For the school</a></li>
+        <li><a href="benefits.html#students">For students</a></li>
+        <li><a href="benefits.html#learn">Free learning</a></li>
+        <li><a href="benefits.html#ai">AI tools</a></li>
+        <li><a href="registration.html">Registration roadmap</a></li>
+        <li><a href="registration.html#domain">Activating our domain</a></li>
+      </ul></div>
+      <div><h5>Official portals</h5><ul>
+        <li><a href="https://edu.google.com/workspace-for-education/editions/education-fundamentals/" target="_blank" rel="noopener">Google for Education</a></li>
+        <li><a href="https://www.microsoft.com/en-in/education/products/office" target="_blank" rel="noopener">Microsoft 365 Education</a></li>
+        <li><a href="https://github.com/education" target="_blank" rel="noopener">GitHub Education</a></li>
+        <li><a href="https://support.google.com/a/answer/7667994" target="_blank" rel="noopener">Google Admin Console</a></li>
+        <li><a href="https://aim.gov.in/atl.php" target="_blank" rel="noopener">Atal Tinkering Labs</a></li>
+        <li><a href="Maples_Tech_Club_Proposal_Principal.pdf" download>Download proposal PDF</a></li>
+      </ul></div>
+    </div>
+    <div class="disc"><strong>Please note.</strong> This website is a student proposal prepared by
+      Harsh (Class XII, Roll No. 13) to support an application to the Principal. The Maples Tech Club is
+      <em>proposed</em> and not yet a sanctioned body of the school, and this site is not an official
+      publication of Maples Academy. Every programme listed is described from its provider's own
+      published information at the time of writing; eligibility rules, features and fees change, so
+      please confirm on the official links before acting.</div>
+    <div class="fbot">
+      <span>Proposal prepared by <strong style="color:var(--tx2)">Harsh</strong>, Class XII, Roll No. 13,
+        Maples Academy, Khatauli, Muzaffarnagar, Uttar Pradesh.</span>
+      <span>Built by the students it is meant for.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.querySelector('.burger'), n=document.querySelector('nav.links');
+  if(b&&n){b.addEventListener('click',function(){
+    n.classList.toggle('open');
+    b.setAttribute('aria-expanded', n.classList.contains('open'));
+  });}
+})();
+</script>
+
+</body>
+</html>

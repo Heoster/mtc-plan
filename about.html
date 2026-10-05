@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Club &middot; Maples Tech Club, Maples Academy Khatauli</title>
+<meta name="description" content="Full charter of the Maples Tech Club: definition, purpose, vision and mission, structure, the six domain squads and the annual calendar.">
+<meta name="author" content="Harsh, Class XII, Roll No. 13, Maples Academy Khatauli">
+<meta name="theme-color" content="#070b16">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#070b16; --bg2:#0b1224; --panel:#111a30; --panel2:#0e1628;
+  --line:rgba(148,178,255,.15); --line2:rgba(148,178,255,.28);
+  --tx:#e8eeff; --tx2:#a9b8dc; --tx3:#7488b3;
+  --cy:#22d3ee; --vi:#a78bfa; --gr:#34d399; --am:#fbbf24; --rd:#fb7185;
+  --grad:linear-gradient(135deg,#22d3ee 0%,#818cf8 50%,#a78bfa 100%);
+  --r:16px; --rs:10px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg); color:var(--tx); line-height:1.68;
+  font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',Arial,sans-serif;
+  font-size:16px; overflow-x:hidden;
+}
+body::before{
+  content:""; position:fixed; inset:0; z-index:-2; pointer-events:none;
+  background:
+    radial-gradient(900px 520px at 12% -8%, rgba(34,211,238,.16), transparent 62%),
+    radial-gradient(820px 480px at 92% 4%, rgba(167,139,250,.15), transparent 60%),
+    radial-gradient(700px 600px at 50% 108%, rgba(52,211,153,.08), transparent 60%);
+}
+body::after{
+  content:""; position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.4;
+  background-image:linear-gradient(rgba(148,178,255,.045) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(148,178,255,.045) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(ellipse 100% 70% at 50% 0%,#000 40%,transparent 100%);
+  -webkit-mask-image:radial-gradient(ellipse 100% 70% at 50% 0%,#000 40%,transparent 100%);
+}
+a{color:var(--cy);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+
+/* ── nav ── */
+header.nav{position:sticky;top:0;z-index:60;backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);background:rgba(7,11,22,.82);
+  border-bottom:1px solid var(--line)}
+.navin{max-width:1160px;margin:0 auto;padding:11px 22px;display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;flex-shrink:0}
+.brand:hover{text-decoration:none}
+.logo{width:38px;height:38px;flex-shrink:0}
+.bname{font-weight:800;font-size:16.5px;letter-spacing:-.3px;color:var(--tx);line-height:1.15}
+.bsub{font-size:10.5px;color:var(--tx3);letter-spacing:1.3px;text-transform:uppercase;font-weight:600}
+nav.links{margin-left:auto;display:flex;gap:3px;align-items:center;flex-wrap:wrap}
+nav.links a{padding:8px 13px;border-radius:9px;font-size:14px;font-weight:600;
+  color:var(--tx2);transition:.16s;white-space:nowrap}
+nav.links a:hover{background:rgba(148,178,255,.09);color:var(--tx);text-decoration:none}
+nav.links a.on{color:var(--tx);background:rgba(34,211,238,.13);
+  box-shadow:inset 0 0 0 1px rgba(34,211,238,.3)}
+nav.links a.cta{background:var(--grad);color:#050810;font-weight:800;margin-left:6px}
+nav.links a.cta:hover{filter:brightness(1.1);text-decoration:none}
+.burger{display:none;margin-left:auto;background:rgba(148,178,255,.1);border:1px solid var(--line2);
+  color:var(--tx);width:40px;height:38px;border-radius:9px;font-size:18px;cursor:pointer;line-height:1}
+
+/* ── sections ── */
+section{padding:62px 0}
+.hero{padding:76px 0 56px}
+h1{font-size:clamp(31px,5.4vw,55px);line-height:1.08;font-weight:850;letter-spacing:-1.6px;
+   margin-bottom:18px}
+h2{font-size:clamp(23px,3.3vw,33px);line-height:1.2;font-weight:800;letter-spacing:-.8px;
+   margin-bottom:12px}
+h3{font-size:19px;font-weight:750;letter-spacing:-.3px;margin-bottom:8px}
+h4{font-size:15.5px;font-weight:750;margin-bottom:6px}
+p{color:var(--tx2);margin-bottom:13px}
+.lead{font-size:18.5px;color:var(--tx2);max-width:74ch}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:800;
+  letter-spacing:1.9px;text-transform:uppercase;color:var(--cy);
+  background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.28);
+  padding:6px 14px;border-radius:99px;margin-bottom:20px;line-height:1.5}
+.shead{margin-bottom:30px;max-width:80ch}
+.shead p{font-size:16.5px}
+.kicker{font-size:11.5px;font-weight:800;letter-spacing:1.9px;text-transform:uppercase;
+  color:var(--vi);margin-bottom:9px}
+
+/* ── buttons ── */
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 24px;border-radius:12px;
+  font-weight:750;font-size:15px;transition:.18s;border:1px solid transparent;cursor:pointer}
+.btn:hover{text-decoration:none;transform:translateY(-2px)}
+.btn-p{background:var(--grad);color:#050810;box-shadow:0 10px 28px -10px rgba(34,211,238,.6)}
+.btn-p:hover{box-shadow:0 16px 36px -10px rgba(34,211,238,.75)}
+.btn-s{background:rgba(148,178,255,.07);color:var(--tx);border-color:var(--line2)}
+.btn-s:hover{background:rgba(148,178,255,.13);border-color:var(--cy)}
+
+/* ── cards / grid ── */
+.grid{display:grid;gap:17px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:linear-gradient(160deg,rgba(255,255,255,.045),rgba(255,255,255,.015));
+  border:1px solid var(--line);border-radius:var(--r);padding:22px;transition:.2s}
+.card:hover{border-color:var(--line2);transform:translateY(-3px);
+  box-shadow:0 18px 44px -22px rgba(0,0,0,.85)}
+.card p:last-child{margin-bottom:0}
+.card .ic{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;
+  margin-bottom:13px;background:rgba(34,211,238,.12);border:1px solid rgba(34,211,238,.25)}
+svg.i{width:18px;height:18px;flex:0 0 auto;display:inline-block;vertical-align:-3px;
+  fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.card .ic svg.i{width:21px;height:21px;stroke:var(--cy)}
+.eyebrow svg.i{width:14px;height:14px;stroke:var(--cy)}
+.btn svg.i{width:17px;height:17px}
+.lnk svg.i{width:18px;height:18px;stroke:var(--cy)}
+.card.vi .ic{background:rgba(167,139,250,.12);border-color:rgba(167,139,250,.25)}
+.card.vi .ic svg.i{stroke:var(--vi)}
+.card.gr .ic{background:rgba(52,211,153,.12);border-color:rgba(52,211,153,.25)}
+.card.gr .ic svg.i{stroke:var(--gr)}
+.card.am .ic{background:rgba(251,191,36,.12);border-color:rgba(251,191,36,.25)}
+.card.am .ic svg.i{stroke:var(--am)}
+.card small{color:var(--tx3);font-size:13.5px}
+
+/* ── stats ── */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:38px}
+.stat{background:rgba(148,178,255,.05);border:1px solid var(--line);border-radius:var(--r);
+  padding:19px;text-align:center}
+.stat b{display:block;font-size:clamp(23px,3.4vw,31px);font-weight:850;letter-spacing:-1px;
+  line-height:1.1;margin-bottom:3px}
+.stat span{font-size:12.5px;color:var(--tx3);font-weight:600;line-height:1.35;display:block}
+
+/* ── tables ── */
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);
+  background:rgba(148,178,255,.028);-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:14.3px;min-width:640px}
+thead th{background:rgba(34,211,238,.1);color:var(--tx);text-align:left;padding:13px 15px;
+  font-weight:750;font-size:12.5px;letter-spacing:.7px;text-transform:uppercase;
+  border-bottom:1px solid var(--line2);white-space:nowrap}
+tbody td{padding:13px 15px;border-bottom:1px solid var(--line);color:var(--tx2);
+  vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover td{background:rgba(148,178,255,.045)}
+td strong,td b{color:var(--tx);font-weight:700}
+.free{color:var(--gr);font-weight:800;white-space:nowrap}
+.paid{color:var(--am);font-weight:800;white-space:nowrap}
+
+/* ── pills / tags ── */
+.pill{display:inline-block;padding:3px 10px;border-radius:99px;font-size:11.5px;font-weight:750;
+  letter-spacing:.3px;white-space:nowrap}
+.p-g{background:rgba(52,211,153,.14);color:var(--gr);border:1px solid rgba(52,211,153,.3)}
+.p-c{background:rgba(34,211,238,.13);color:var(--cy);border:1px solid rgba(34,211,238,.3)}
+.p-v{background:rgba(167,139,250,.14);color:var(--vi);border:1px solid rgba(167,139,250,.3)}
+.p-a{background:rgba(251,191,36,.13);color:var(--am);border:1px solid rgba(251,191,36,.3)}
+.p-r{background:rgba(251,113,133,.13);color:var(--rd);border:1px solid rgba(251,113,133,.3)}
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}
+
+/* ── notes ── */
+.note{border-left:3px solid var(--cy);background:rgba(34,211,238,.06);padding:16px 19px;
+  border-radius:0 var(--rs) var(--rs) 0;margin:20px 0}
+.note.warn{border-color:var(--am);background:rgba(251,191,36,.06)}
+.note.good{border-color:var(--gr);background:rgba(52,211,153,.06)}
+.note.vi{border-color:var(--vi);background:rgba(167,139,250,.06)}
+.note h4{color:var(--tx)}
+.note p:last-child{margin-bottom:0}
+.note strong{color:var(--tx)}
+
+/* ── steps / timeline ── */
+.steps{position:relative;padding-left:40px;margin-top:8px}
+.steps::before{content:"";position:absolute;left:14px;top:10px;bottom:10px;width:2px;
+  background:linear-gradient(180deg,var(--cy),var(--vi),transparent)}
+.step{position:relative;margin-bottom:26px}
+.step:last-child{margin-bottom:0}
+.step .num{position:absolute;left:-40px;top:0;width:30px;height:30px;border-radius:50%;
+  background:var(--bg2);border:2px solid var(--cy);display:grid;place-items:center;
+  font-weight:800;font-size:13px;color:var(--cy)}
+.step h4{font-size:17px;margin-bottom:5px}
+.step p{margin-bottom:7px;font-size:15px}
+
+/* ── lists ── */
+ul.ck{list-style:none;margin:10px 0}
+ul.ck li{position:relative;padding-left:27px;margin-bottom:9px;color:var(--tx2)}
+ul.ck li::before{content:"";position:absolute;left:0;top:9px;width:14px;height:8px;
+  border-left:2.2px solid var(--gr);border-bottom:2.2px solid var(--gr);
+  transform:rotate(-45deg)}
+ul.ar{list-style:none;margin:10px 0}
+ul.ar li{position:relative;padding-left:23px;margin-bottom:9px;color:var(--tx2)}
+ul.ar li::before{content:"\203A";position:absolute;left:4px;top:-2px;color:var(--cy);
+  font-size:20px;font-weight:800}
+ul.ck li strong,ul.ar li strong{color:var(--tx)}
+ol.no{counter-reset:n;list-style:none;margin:10px 0}
+ol.no li{counter-increment:n;position:relative;padding-left:34px;margin-bottom:11px;color:var(--tx2)}
+ol.no li::before{content:counter(n);position:absolute;left:0;top:2px;width:23px;height:23px;
+  border-radius:7px;background:rgba(34,211,238,.13);border:1px solid rgba(34,211,238,.3);
+  color:var(--cy);font-size:12.5px;font-weight:800;display:grid;place-items:center}
+ol.no li strong{color:var(--tx)}
+
+/* ── link rows ── */
+.lnk{display:flex;align-items:center;gap:11px;padding:12px 15px;border-radius:var(--rs);
+  background:rgba(148,178,255,.045);border:1px solid var(--line);transition:.16s;
+  color:var(--tx2);font-size:14.5px;font-weight:600}
+.lnk:hover{background:rgba(34,211,238,.09);border-color:rgba(34,211,238,.35);
+  color:var(--tx);text-decoration:none;transform:translateX(3px)}
+.lnk span.u{margin-left:auto;font-size:12px;color:var(--tx3);font-weight:500;
+  font-family:ui-monospace,Menlo,Consolas,monospace}
+.lnkgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
+
+/* ── hero panel ── */
+.hpanel{background:linear-gradient(160deg,rgba(34,211,238,.08),rgba(167,139,250,.05));
+  border:1px solid var(--line2);border-radius:20px;padding:26px}
+.hpanel .row{display:flex;justify-content:space-between;align-items:center;gap:12px;
+  padding:11px 0;border-bottom:1px dashed var(--line)}
+.hpanel .row:last-child{border-bottom:none}
+.hpanel .row span:first-child{color:var(--tx2);font-size:14.5px}
+.hpanel .row span:last-child{font-weight:800;font-size:14.5px;text-align:right}
+.split{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:start}
+.split.mid{align-items:center}
+
+/* ── cta band ── */
+.band{background:linear-gradient(135deg,rgba(34,211,238,.1),rgba(167,139,250,.09));
+  border:1px solid var(--line2);border-radius:20px;padding:36px;text-align:center;margin-top:8px}
+.band h2{margin-bottom:10px}
+.band .btns{justify-content:center}
+
+/* ── footer ── */
+footer{border-top:1px solid var(--line);margin-top:34px;padding:38px 0 30px;
+  background:rgba(7,11,22,.6)}
+.fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:26px;margin-bottom:26px}
+footer h5{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);
+  margin-bottom:11px;font-weight:800}
+footer ul{list-style:none}
+footer ul li{margin-bottom:7px}
+footer ul li a{color:var(--tx2);font-size:14px}
+footer ul li a:hover{color:var(--cy)}
+.fbot{border-top:1px solid var(--line);padding-top:18px;display:flex;
+  justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--tx3)}
+.disc{font-size:12.5px;color:var(--tx3);line-height:1.6;margin-top:14px;
+  padding:13px 16px;background:rgba(148,178,255,.035);border:1px solid var(--line);
+  border-radius:var(--rs)}
+
+/* ── misc ── */
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13.5px;
+  background:rgba(34,211,238,.09);padding:2px 5px;border-radius:5px;color:var(--cy)}
+.hr{height:1px;background:var(--line);margin:44px 0}
+.anchor{scroll-margin-top:86px}
+.tocbar{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 4px}
+.tocbar a{font-size:13.5px;font-weight:650;padding:7px 14px;border-radius:99px;
+  background:rgba(148,178,255,.06);border:1px solid var(--line);color:var(--tx2)}
+.tocbar a:hover{border-color:var(--cy);color:var(--tx);text-decoration:none}
+.cent{text-align:center}
+
+@media(max-width:940px){
+  .g4{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(2,1fr)}
+  .split{grid-template-columns:1fr;gap:26px}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
+  .burger{display:block}
+  nav.links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;
+    align-items:stretch;gap:4px;padding:12px 18px 18px;background:rgba(9,14,28,.99);
+    border-bottom:1px solid var(--line2)}
+  nav.links.open{display:flex}
+  nav.links a{padding:11px 14px}
+  nav.links a.cta{margin-left:0;text-align:center}
+  .g2,.g3,.g4{grid-template-columns:1fr}
+  .lnkgrid{grid-template-columns:1fr}
+  section{padding:46px 0}
+  .hero{padding:48px 0 38px}
+  .band{padding:26px 20px}
+  .steps{padding-left:34px}
+  .step .num{left:-34px;width:26px;height:26px;font-size:12px}
+}
+@media(max-width:480px){
+  .stats{grid-template-columns:1fr 1fr}
+  .fgrid{grid-template-columns:1fr}
+  .btn{width:100%;justify-content:center}
+  .pill{white-space:normal}
+}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="navin">
+    <a class="brand" href="index.html"><svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
+<defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#22d3ee"/><stop offset=".55" stop-color="#818cf8"/>
+<stop offset="1" stop-color="#a78bfa"/></linearGradient></defs>
+<rect x="2" y="2" width="44" height="44" rx="12" fill="url(#lg)" opacity=".16"/>
+<rect x="2.9" y="2.9" width="42.2" height="42.2" rx="11.2" fill="none" stroke="url(#lg)" stroke-width="1.7"/>
+<path d="M24 9c3.4 3.6 5.2 7.3 5.2 11 0 2.6-1 4.6-2.2 6.3l3.1 1.1-4 1.7 1 3.4-3.4-2-0.4 4.2h-1.6l-.4-4.2-3.4 2 1-3.4-4-1.7 3.1-1.1c-1.2-1.7-2.2-3.7-2.2-6.3 0-3.7 1.8-7.4 5.2-11z"
+ fill="url(#lg)" opacity=".92"/>
+<path d="M15.5 38.5h17" stroke="url(#lg)" stroke-width="2.1" stroke-linecap="round"/>
+<circle cx="13.2" cy="21.5" r="1.7" fill="#22d3ee"/><circle cx="34.8" cy="21.5" r="1.7" fill="#a78bfa"/>
+</svg>
+      <span><span class="bname">Maples Tech Club</span><br>
+      <span class="bsub">Maples Academy &middot; Khatauli</span></span></a>
+    <button class="burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="on">The Club</a>
+      <a href="benefits.html">Benefits</a>
+      <a href="registration.html">Registration</a>
+      <a href="join.html">Join Us</a>
+      <a href="proposal.html" class="cta">For the Principal</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+<section class="hero" style="padding-bottom:26px"><div class="wrap">
+  <span class="eyebrow"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg> The Club</span>
+  <h1>What the <span class="grad">Maples Tech Club</span> actually is</h1>
+  <p class="lead">A supervised workshop rather than a lecture class, and the place where the school's
+  digital systems are looked after. This page is the club's full charter: what it is, what it is for, how
+  it is structured, its six squads and its calendar.</p>
+  <div class="tocbar">
+    <a href="#definition">Definition</a><a href="#purpose">Purpose</a><a href="#vision">Vision &amp; mission</a>
+    <a href="#structure">Structure</a><a href="#squads">The six squads</a><a href="#calendar">Calendar</a>
+    <a href="#discipline">Academic discipline</a>
+  </div>
+</div></section>
+
+<section class="anchor" id="definition" style="padding-top:20px"><div class="wrap">
+  <div class="shead"><div class="kicker">01 &mdash; Definition</div>
+    <h2>A workshop, not a lecture hall</h2></div>
+  <div class="split">
+    <div>
+      <p>The one rule that defines the Maples Tech Club is that <strong>every member ends every term
+      holding something they have actually made</strong>. A working web page, a small program, a robot
+      that moves, a poster, a short film, a chart, a written-up experiment. Theory is taught only as far
+      as it is needed to make the thing. The club does not repeat the syllabus. It puts it to use.</p>
+      <p>The club also <strong>looks after the school's digital systems</strong>. Once the registrations
+      are done, the club helps maintain the school's website, its official email accounts, its Google
+      Classroom spaces and its event photographs, always under the faculty advisor. So the school gets
+      something back, week after week, for the two hours it gives us.</p>
+      <p>It is <strong>non-commercial and non-political</strong>. No fee is charged to apply or to be
+      a member, and nothing is sold.</p>
+    </div>
+    <div class="hpanel">
+      <div class="kicker">Identity</div>
+      <div class="row"><span>Name</span><span>Maples Tech Club (MTC)</span></div>
+      <div class="row"><span>Institution</span><span>Maples Academy, Khatauli</span></div>
+      <div class="row"><span>Motto</span><span><em>Learn it. Build it. Ship it.</em></span></div>
+      <div class="row"><span>Open to</span><span>Classes VI &ndash; XII</span></div>
+      <div class="row"><span>Meets</span><span>1 session &times; 2 hrs / week</span></div>
+      <div class="row"><span>Proposed by</span><span>Harsh, Class XII, Roll No. 13</span></div>
+      <div class="row"><span>Membership fee</span><span class="free">None</span></div>
+    </div>
+  </div>
+</div></section>
+
+<div class="wrap"><div class="hr"></div></div>
+
+<section class="anchor" id="purpose" style="padding-top:0"><div class="wrap">
+  <div class="shead"><div class="kicker">02 &mdash; Purpose</div>
+    <h2>The eight objectives</h2>
+    <p>Each objective is stated with the reason it matters specifically to Maples Academy, so the
+    club can be judged against it.</p></div>
+  <div class="tw"><table>
+    <thead><tr><th style="width:34px">#</th><th style="width:26%">Objective</th><th>Why it matters to our school</th></tr></thead>
+    <tbody>
+      <tr><td><strong>1</strong></td><td><strong>Close the gap between syllabus and practice</strong></td>
+        <td>CBSE now examines Artificial Intelligence and Information Technology as skill subjects. A student
+        who has actually written and run code understands the paper far better than one who has memorised it.</td></tr>
+      <tr><td><strong>2</strong></td><td><strong>Get the school the free digital tools it qualifies for</strong></td>
+        <td>Official school email, cloud storage, Google Classroom and Microsoft Teams are available at no
+        licence cost &mdash; but only to registered institutions. The club does the registration and the upkeep.</td></tr>
+      <tr><td><strong>3</strong></td><td><strong>Give every member a verifiable portfolio</strong></td>
+        <td>Project work hosted publicly is evidence a student can show to a college, a scholarship committee or
+        an employer. Marks alone no longer set anyone apart.</td></tr>
+      <tr><td><strong>4</strong></td><td><strong>Build a self-sustaining peer-teaching chain</strong></td>
+        <td>Classes XI&ndash;XII train Classes VI&ndash;X. The club does not collapse when its seniors graduate,
+        and no teacher gets landed with extra teaching.</td></tr>
+      <tr><td><strong>5</strong></td><td><strong>Represent the school externally</strong></td>
+        <td>Participation and prizes in olympiads, science fairs, hackathons and innovation challenges bring
+        recognition to the institution and to Khatauli.</td></tr>
+      <tr><td><strong>6</strong></td><td><strong>Digitise and support school operations</strong></td>
+        <td>A maintained website, an online notice board, digital forms, event media and a results portal
+        all done by students, supervised by staff, without paying a vendor.</td></tr>
+      <tr><td><strong>7</strong></td><td><strong>Teach digital safety and AI ethics</strong></td>
+        <td>Students already use AI and social media. Structured guidance on privacy, safe conduct online,
+        misinformation and honesty in their work protects the school as much as it protects them.</td></tr>
+      <tr><td><strong>8</strong></td><td><strong>Widen career horizons</strong></td>
+        <td>Exposure to software, data, design and hardware careers &mdash; and to the free national learning
+        platforms that teach them, aimed at students who would otherwise never hear of any of it.</td></tr>
+    </tbody></table></div>
+</div></section>
+
+<section class="anchor" id="vision"><div class="wrap">
+  <div class="shead"><div class="kicker">03 &mdash; Vision &amp; mission</div><h2>What we are aiming at</h2></div>
+  <div class="note vi">
+    <h4>Vision</h4>
+    <p style="font-size:18px;color:var(--tx)">No student should leave Maples Academy having only
+    <em>read</em> about technology. They should leave having <em>made</em> something with it.</p>
+  </div>
+  <h3 style="margin-top:26px;margin-bottom:6px">Mission &mdash; the club commits to:</h3>
+  <ul class="ck">
+    <li><strong>Teach practical computing, AI literacy and electronics</strong> through hands-on projects,
+      free of cost, to any student of the school who wishes to learn.</li>
+    <li><strong>Get hold of, and look after properly,</strong> the free technology our
+      school is eligible for, so that the benefit reaches every student and teacher, not just club members.</li>
+    <li><strong>Create a peer-teaching chain</strong> in which senior members train junior members, so the club
+      survives the departure of any individual, including its founder.</li>
+    <li><strong>Represent Maples Academy</strong> in inter-school competitions, olympiads, hackathons and
+      national innovation challenges.</li>
+    <li><strong>Serve the school with real digital work</strong>: website, notices, results portal, event
+      photography, posters and archives.</li>
+    <li><strong>Promote safe, ethical and honest use</strong> of computers and artificial intelligence,
+      including a firm stand against plagiarism and misuse.</li>
+  </ul>
+</div></section>
+
+<div class="wrap"><div class="hr"></div></div>
+
+<section class="anchor" id="structure" style="padding-top:0"><div class="wrap">
+  <div class="shead"><div class="kicker">04 &mdash; Structure</div>
+    <h2>Who answers to whom</h2>
+    <p>Authority flows from the Principal to the two nominated teachers, and only then to students.
+    <strong>No student office-bearer holds financial or disciplinary authority, and no student is ever
+    given administrator rights over a school account.</strong></p></div>
+  <div class="tw"><table>
+    <thead><tr><th style="width:56px">Tier</th><th style="width:19%">Office</th><th style="width:22%">Held by</th><th>Responsibility</th></tr></thead>
+    <tbody>
+      <tr><td><strong>1</strong></td><td><strong>Patron</strong></td><td>The Principal</td>
+        <td>Approves the club, the annual plan, and any participation outside the school. The final word on everything.</td></tr>
+      <tr><td><strong>2</strong></td><td><strong>Faculty Advisor</strong></td><td>One teacher nominated by the Principal</td>
+        <td>Present at every session; countersigns all correspondence; answerable for discipline, attendance
+        and the safety of the members.</td></tr>
+      <tr><td><strong>3</strong></td><td><strong>Coordinator</strong></td><td>One teacher nominated by the Principal.
+        May be the same person as the Faculty Advisor.</td>
+        <td>Holds the <strong>Google Admin Console</strong> and all administrator passwords, jointly with the
+        Principal. The school's verified contact for Google, Microsoft, GitHub and Canva. Creates and closes
+        accounts, and is answerable for data privacy and for which apps each class may use.</td></tr>
+      <tr><td><strong>4</strong></td><td><strong>Core Committee</strong></td><td>6 students of Classes XI&ndash;XII</td>
+        <td>President, Vice-President, Secretary, Technical Lead, Design &amp; Media Lead, Outreach Lead.
+        Plan sessions, keep the register, report monthly to the advisor.</td></tr>
+      <tr><td><strong>5</strong></td><td><strong>Squad Leads</strong></td><td>6 students, one per domain</td>
+        <td>Run the weekly agenda and mentoring for their own squad.</td></tr>
+      <tr><td><strong>6</strong></td><td><strong>Core Members</strong></td><td>Selected students, Classes VIII&ndash;XII</td>
+        <td>Attend regularly, complete term projects, mentor juniors, represent the school externally.</td></tr>
+      <tr><td><strong>7</strong></td><td><strong>Open Members</strong></td><td>Any student, Classes VI&ndash;XII</td>
+        <td>Attend open workshops and awareness sessions. No selection of any kind.</td></tr>
+    </tbody></table></div>
+  <div class="note good" style="margin-top:22px">
+    <h4>Why the club will outlive its founder</h4>
+    <p>Every squad has a junior deputy. The Core Committee is elected annually in Term IV. All
+    documentation, credentials and project files are handed to the Faculty Advisor before the outgoing
+    batch leaves, and at least 40% of every new intake is kept for Classes VI&ndash;IX.</p>
+  </div>
+</div></section>
+
+<section class="anchor" id="squads"><div class="wrap">
+  <div class="shead"><div class="kicker">05 &mdash; Squads</div>
+    <h2>The six domain squads</h2>
+    <p>A member joins one squad but may attend any squad's open sessions.</p></div>
+  <div class="tw"><table>
+    <thead><tr><th style="width:23%">Squad</th><th style="width:38%">What members learn</th><th>A typical term project</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Web &amp; App Development</strong></td>
+        <td>HTML, CSS, JavaScript, Git and GitHub, hosting, responsive design, basic databases</td>
+        <td>The official Maples Academy website and an online notice board</td></tr>
+      <tr><td><strong>Artificial Intelligence &amp; Data</strong></td>
+        <td>Python, data handling, charts and statistics, introductory machine learning, prompt literacy, AI ethics</td>
+        <td>A data study of school attendance, or an image classifier trained on a small dataset</td></tr>
+      <tr><td><strong>Robotics, IoT &amp; Electronics</strong></td>
+        <td>Circuits, sensors, Arduino, micro:bit, 3D design and printing, automation</td>
+        <td>An automatic water-level alarm, or a line-following robot for the science exhibition</td></tr>
+      <tr><td><strong>Design &amp; Digital Media</strong></td>
+        <td>Graphic design, typography, poster and magazine layout, photography, video editing</td>
+        <td>The complete visual identity and coverage of the Annual Day</td></tr>
+      <tr><td><strong>Cyber Safety &amp; Digital Citizenship</strong></td>
+        <td>Passwords and two-factor authentication, phishing and fraud, privacy, safe social media, fact-checking</td>
+        <td>A school-wide digital safety awareness drive and a parents' handout</td></tr>
+      <tr><td><strong>Competitive Programming &amp; Logic</strong></td>
+        <td>Problem solving, algorithms, data structures, olympiad and aptitude preparation</td>
+        <td>A school coding contest and entry to national olympiads</td></tr>
+    </tbody></table></div>
+</div></section>
+
+<section class="anchor" id="calendar"><div class="wrap">
+  <div class="shead"><div class="kicker">06 &mdash; Calendar</div><h2>How a year runs</h2></div>
+  <div class="tw"><table>
+    <thead><tr><th style="width:90px">Term</th><th style="width:150px">Period</th><th style="width:34%">Focus</th><th>Deliverable</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Term I</strong></td><td>April &ndash; June</td>
+        <td>Recruitment, induction, fundamentals, digital hygiene</td>
+        <td>Every new member publishes a first small project</td></tr>
+      <tr><td><strong>Term II</strong></td><td>July &ndash; September</td>
+        <td>Squad specialisation; the school website goes live</td>
+        <td>Live school website; inter-house coding contest</td></tr>
+      <tr><td><strong>Term III</strong></td><td>October &ndash; December</td>
+        <td>Competitions, science exhibition, hackathon participation</td>
+        <td><strong>TechFest Maples</strong> &mdash; an open exhibition for parents and feeder schools</td></tr>
+      <tr><td><strong>Term IV</strong></td><td>January &ndash; March</td>
+        <td>Board-exam-light term: documentation, peer teaching, handover</td>
+        <td>Annual report to the Principal; election of the next Core Committee</td></tr>
+    </tbody></table></div>
+</div></section>
+
+<section class="anchor" id="discipline" style="padding-top:12px"><div class="wrap">
+  <div class="note warn">
+    <h4>Academic discipline &mdash; a binding rule of the club</h4>
+    <p>The club <strong>stops completely for the four weeks before any school examination</strong> and for
+    the whole of the CBSE board examination period. Coming to the club is never an excuse for falling
+    behind in class. If a member's marks start dropping, the Faculty Advisor keeps them out until they
+    recover. Studies come first, and that is written into the code of conduct every member signs.</p>
+  </div>
+  <div class="btns">
+    <a class="btn btn-p" href="join.html">How to join &rarr;</a>
+    <a class="btn btn-s" href="benefits.html">What the school gets &rarr;</a>
+  </div>
+</div></section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:12px"><svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
+<defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#22d3ee"/><stop offset=".55" stop-color="#818cf8"/>
+<stop offset="1" stop-color="#a78bfa"/></linearGradient></defs>
+<rect x="2" y="2" width="44" height="44" rx="12" fill="url(#lg)" opacity=".16"/>
+<rect x="2.9" y="2.9" width="42.2" height="42.2" rx="11.2" fill="none" stroke="url(#lg)" stroke-width="1.7"/>
+<path d="M24 9c3.4 3.6 5.2 7.3 5.2 11 0 2.6-1 4.6-2.2 6.3l3.1 1.1-4 1.7 1 3.4-3.4-2-0.4 4.2h-1.6l-.4-4.2-3.4 2 1-3.4-4-1.7 3.1-1.1c-1.2-1.7-2.2-3.7-2.2-6.3 0-3.7 1.8-7.4 5.2-11z"
+ fill="url(#lg)" opacity=".92"/>
+<path d="M15.5 38.5h17" stroke="url(#lg)" stroke-width="2.1" stroke-linecap="round"/>
+<circle cx="13.2" cy="21.5" r="1.7" fill="#22d3ee"/><circle cx="34.8" cy="21.5" r="1.7" fill="#a78bfa"/>
+</svg>
+          <span><span class="bname">Maples Tech Club</span><br>
+          <span class="bsub">Maples Academy &middot; Khatauli</span></span></a>
+        <p style="font-size:14px;max-width:34ch">A student-run technology society proposed for
+        Maples Academy, Khatauli, Uttar Pradesh &mdash; teaching computing, AI, robotics and design
+        by building real things.</p>
+        <p style="font-size:13.5px;color:var(--tx3);margin-top:8px">
+        Motto &mdash; <em>Learn it. Build it. Ship it.</em></p>
+      </div>
+      <div><h5>The Club</h5><ul>
+        <li><a href="about.html">Purpose &amp; vision</a></li>
+        <li><a href="about.html#squads">The six squads</a></li>
+        <li><a href="about.html#structure">Structure</a></li>
+        <li><a href="about.html#calendar">Annual calendar</a></li>
+        <li><a href="join.html">Selection process</a></li>
+        <li><a href="join.html#conduct">Code of conduct</a></li>
+      </ul></div>
+      <div><h5>Benefits</h5><ul>
+        <li><a href="benefits.html#school">For the school</a></li>
+        <li><a href="benefits.html#students">For students</a></li>
+        <li><a href="benefits.html#learn">Free learning</a></li>
+        <li><a href="benefits.html#ai">AI tools</a></li>
+        <li><a href="registration.html">Registration roadmap</a></li>
+        <li><a href="registration.html#domain">Activating our domain</a></li>
+      </ul></div>
+      <div><h5>Official portals</h5><ul>
+        <li><a href="https://edu.google.com/workspace-for-education/editions/education-fundamentals/" target="_blank" rel="noopener">Google for Education</a></li>
+        <li><a href="https://www.microsoft.com/en-in/education/products/office" target="_blank" rel="noopener">Microsoft 365 Education</a></li>
+        <li><a href="https://github.com/education" target="_blank" rel="noopener">GitHub Education</a></li>
+        <li><a href="https://support.google.com/a/answer/7667994" target="_blank" rel="noopener">Google Admin Console</a></li>
+        <li><a href="https://aim.gov.in/atl.php" target="_blank" rel="noopener">Atal Tinkering Labs</a></li>
+        <li><a href="Maples_Tech_Club_Proposal_Principal.pdf" download>Download proposal PDF</a></li>
+      </ul></div>
+    </div>
+    <div class="disc"><strong>Please note.</strong> This website is a student proposal prepared by
+      Harsh (Class XII, Roll No. 13) to support an application to the Principal. The Maples Tech Club is
+      <em>proposed</em> and not yet a sanctioned body of the school, and this site is not an official
+      publication of Maples Academy. Every programme listed is described from its provider's own
+      published information at the time of writing; eligibility rules, features and fees change, so
+      please confirm on the official links before acting.</div>
+    <div class="fbot">
+      <span>Proposal prepared by <strong style="color:var(--tx2)">Harsh</strong>, Class XII, Roll No. 13,
+        Maples Academy, Khatauli, Muzaffarnagar, Uttar Pradesh.</span>
+      <span>Built by the students it is meant for.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.querySelector('.burger'), n=document.querySelector('nav.links');
+  if(b&&n){b.addEventListener('click',function(){
+    n.classList.toggle('open');
+    b.setAttribute('aria-expanded', n.classList.contains('open'));
+  });}
+})();
+</script>
+
+</body>
+</html>
