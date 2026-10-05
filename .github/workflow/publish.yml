@@ -1,0 +1,76 @@
+name: Build and publish the Maples Tech Club site
+
+# GitHub Pages only serves static files - it cannot run Python at the moment a
+# visitor clicks download. So instead of building the PDF per download, this
+# rebuilds and republishes the whole site every morning. The PDF on the live
+# site is then never more than a day out of date.
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # 00:30 UTC = 06:00 India. Runs daily so the PDF date stays current.
+    - cron: "30 0 * * *"
+  workflow_dispatch: # lets you press "Run workflow" by hand
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install fonts that have the rupee sign
+        run: sudo apt-get update && sudo apt-get install -y fonts-dejavu-core
+
+      - name: Install Python packages
+        run: pip install reportlab pypdf
+
+      - name: Build the PDF and the site
+        run: python build_site.py # this runs build_pdf.py itself
+
+      - name: Verify the PDF carries today's Indian date
+        run: |
+          python - <<'PY'
+          import sys
+          from datetime import datetime, timedelta, timezone
+          from pypdf import PdfReader
+
+          ist = timezone(timedelta(hours=5, minutes=30))
+          now = datetime.now(ist)
+          want = f"{now.day} {now:%B %Y}"
+
+          pdf = "maples-tech-club/Maples_Tech_Club_Proposal_Principal.pdf"
+          text = "".join(p.extract_text() or "" for p in PdfReader(pdf).pages)
+
+          if want not in text:
+              print(f"::error::PDF is not dated {want}")
+              sys.exit(1)
+          print(f"OK - PDF is dated {want}")
+          PY
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: maples-tech-club
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
