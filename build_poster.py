@@ -189,15 +189,15 @@ TOOLS = [
 STEPS = [
     ("Give your name to your class teacher",
      f"By {NAMES_BY}. No form to buy, no fee, nothing to prepare."),
-    ("Sit the online test",
-     "On your own phone or a school computer. Separate paper for Classes VI\u2013VIII, "
-     "IX\u2013X and XI\u2013XII, so nobody competes against a senior."),
-    ("Make one small thing \u2014 one week",
-     "A poster, a web page, a Scratch game, a working circuit, a short video. Your choice. "
-     "Finishing it matters far more than how neat it looks."),
-    ("A five-minute conversation",
-     "Tell us what you made and what went wrong while making it. Then names go up on the "
-     "notice board."),
+    ("Step 1 \u2014 the online test, 25 questions in 30 minutes",
+     "On your own phone or a school computer. Marked class-wise, so nobody competes against "
+     "a senior. Worth 40%."),
+    ("Step 2 \u2014 make one thing. Anything you like.",
+     "A poster, a web page, a game, a circuit, a short film, a model, a spreadsheet. No list, "
+     "no fixed subject, one week. Worth 60%, and judged on effort, not polish."),
+    ("Names go up on the notice board",
+     "Two steps and that is all. No interview panel, no probation. If you are not picked you "
+     "can still come to every open workshop."),
 ]
 
 
@@ -263,12 +263,13 @@ def build(theme_name):
     <div class="test">
       <div class="lab">Selection test &middot; online</div>
       <div class="big">{TEST_DATE.replace(', ', ',<br>')}</div>
-      <div class="tm">{TEST_TIME} &nbsp;&middot;&nbsp; 30 minutes</div>
+      <div class="tm">{TEST_TIME} &nbsp;&middot;&nbsp; 25 questions &nbsp;&middot;&nbsp; 30 minutes</div>
       <ul>
-        <li><b>Held class-wise.</b> You are only ever compared with students of your own
+        <li><b>25 questions in 30 minutes.</b> Objective only, marked automatically.</li>
+        <li><b>Marked class-wise.</b> You are only ever compared with students of your own
           class group.</li>
-        <li>Patterns, simple reasoning and basic maths \u2014 the level of your own class.</li>
-        <li>One written answer: <b>a problem in our school you would like to fix.</b></li>
+        <li>Basic technical skills: simple logic and patterns, everyday computer awareness,
+          reading instructions, ordinary maths.</li>
         <li><b>No coding.</b> No computer knowledge needed. Nothing to study for.</li>
         <li>Link comes to your class group the evening before.</li>
       </ul>

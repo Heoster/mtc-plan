@@ -1,0 +1,82 @@
+name: Build and publish the Maples Tech Club site
+
+# GitHub Pages only serves static files - it cannot run Python at the moment a
+# visitor clicks download. So instead of building the PDF per download, this
+# rebuilds and republishes the whole site every morning. The PDF on the live
+# site is then never more than a day out of date.
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # 00:30 UTC = 06:00 India. Runs daily so the PDF date stays current.
+    - cron: "30 0 * * *"
+  workflow_dispatch: # lets you press "Run workflow" by hand
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # No font install step. DejaVu is committed in fonts/ and build_pdf.py
+      # looks there first, so this build and the Netlify one are identical.
+
+      - name: Install Python packages
+        run: pip install -r requirements.txt
+
+      - name: Build the PDF and the site
+        run: python build_site.py # this runs build_pdf.py itself
+
+      - name: Verify the PDF carries the expected date
+        run: |
+          python - <<'PY'
+          import re, sys
+          from datetime import datetime, timedelta, timezone
+          from pypdf import PdfReader
+
+          # build_pdf.py may pin a submission date via APP_DATE_OVERRIDE.
+          # If it does, that is the date to expect. Otherwise expect today (IST).
+          src = open("build_pdf.py", encoding="utf-8").read()
+          m = re.search(r'^APP_DATE_OVERRIDE\s*=\s*"([^"]+)"', src, re.M)
+          if m:
+              want, why = m.group(1), "pinned by APP_DATE_OVERRIDE"
+          else:
+              now = datetime.now(timezone(timedelta(hours=5, minutes=30)))
+              want, why = f"{now.day} {now:%B %Y}", "today in India"
+
+          pdf = "maples-tech-club/Maples_Tech_Club_Proposal_Principal.pdf"
+          text = "".join(p.extract_text() or "" for p in PdfReader(pdf).pages)
+
+          if want not in text:
+              print(f"::error::PDF is not dated {want} ({why})")
+              sys.exit(1)
+          print(f"OK - PDF is dated {want} ({why})")
+          PY
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: maples-tech-club
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

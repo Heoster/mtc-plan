@@ -26,7 +26,7 @@ OUT = os.path.join(BASE, "Maples_Tech_Club_Proposal_Principal.pdf")
 # script runs, so the application is never dated in the past.
 # Only set APP_DATE_OVERRIDE if you deliberately want a different date,
 # e.g. APP_DATE_OVERRIDE = "5 November 2026"
-APP_DATE_OVERRIDE = None
+APP_DATE_OVERRIDE = "12 October 2026"
 
 # IST is permanently UTC+05:30 (India has no daylight saving), so a fixed
 # offset is exact and needs no timezone database installed.
@@ -44,13 +44,16 @@ APP_DATE = APP_DATE_OVERRIDE or _today_in_india()
 # --- Unicode fallback fonts: the PDF core fonts have no rupee sign or ballot box ---
 # DejaVu lives in different places on different systems; find it rather than
 # assume one path, so the script also runs on CI runners and on a laptop.
+# The copies shipped in fonts/ come first, so the PDF is byte-for-byte the same
+# whoever builds it. It also means the build needs no apt-get, which matters on
+# Netlify and anywhere else without root.
 _FONT_DIRS = [
+    os.path.join(BASE, "fonts"),
     "/usr/share/fonts/truetype/dejavu",
     "/usr/share/fonts/dejavu",
     "/usr/share/fonts/TTF",
     "/usr/local/share/fonts/dejavu",
     "/Library/Fonts", os.path.expanduser("~/.fonts"),
-    os.path.join(BASE, "fonts"),
 ]
 
 
@@ -303,14 +306,14 @@ F.append(Paragraph("Respected Sir,", S("sal", fontSize=10.5, spaceAfter=7)))
 
 F.append(Paragraph(
     "With due respect, I beg to state that I am <b>Harsh</b> of <b>Class XII, Roll No. 13</b>, "
-    "a student of this school. I am writing to ask your permission for something I have been "
-    "working on for most of this year.", st_body))
+    "a student of this school. I am writing to ask your permission for something I have "
+    "prepared carefully, and which I believe the school will benefit from.", st_body))
 
 F.append(Paragraph(
     "I want to start a technology club in our school. In this application I have called it the "
-    "<b>Maples Tech Club</b>. There are two parts to my request, and I would ask you to read "
-    "them together, because it is the second part that makes the first one worth anything to "
-    "the school.", st_body))
+    "<b>Maples Tech Club</b>. There are three parts to my request, and I would ask you to "
+    "read them together, because it is the second part that makes the first one worth "
+    "anything to the school.", st_body))
 
 F.append(numbered([
     "<b>Permission to start the Maples Tech Club.</b> It would meet once a week, under a "
@@ -325,6 +328,14 @@ F.append(numbered([
     "qualifies today, already owns the domain name these companies ask for, and has simply "
     "never applied. The club would do the paperwork and then look after the accounts "
     "afterwards, under the teacher you appoint.",
+
+    "<b>Permission for a small founding group to set the club up.</b> To begin with I am "
+    "asking only for myself and my friend <b>Vidhan of Class XII</b>, together with two to "
+    "four other "
+    "students chosen by the test described in Annexure&nbsp;D. Four to six of us in all. "
+    "I will run the setting-up myself. Once the club is standing on its feet, it passes to "
+    "its elected President and members, and the rest of the school is admitted in the "
+    "ordinary way.",
 ]))
 
 F.append(Paragraph(
@@ -364,7 +375,7 @@ F.append(Paragraph(
     "built. A student who has built something can answer that question. Marks alone cannot.", st_body))
 
 F.append(Paragraph(
-    "I should be honest about one thing. I am in Class XII and I will be leaving the school in "
+    "I should be honest. I am in Class XII and I will be leaving the school in "
     "a few months, so I will get very little out of this myself. I am asking for it because our "
     "juniors will get years out of it, and because the school is presently missing something it "
     "can have for almost nothing.", st_body))
@@ -377,25 +388,48 @@ F.append(Paragraph(
     "sign, and the targets the club should be judged against after one year. If it has not met "
     "them by then, I have written down that it should be closed.", st_body))
 
+F.append(callout(
+    "Why me, and not somebody else",
+    "I am not claiming to be the best student in the school. What I can say is that nobody "
+    "else has done this particular work. I found these programmes, read the eligibility rules "
+    "for each one, checked which of them a K\u201312 school in India can use, and listed the ones "
+    "that do not apply to us instead of hiding them. The website for this club, the posters "
+    "and this application were all made by me. I am asking for the job because the work is "
+    "already done and I am the one who did it. If somebody can carry it better, I will hand it "
+    "over and stay on as a member.",
+    fill=colors.HexColor("#eef2ff"), bar=ACCENT2))
+
+F.append(Paragraph(
+    "One thing is beyond me. The domain <i>mapleskhatauli.com</i> and the present school "
+    "website are handled by the management, or by whoever built the site. <b>I would request "
+    "you to kindly speak to the management</b>, so that the Coordinator can be given access to "
+    "the domain settings. Without that, nothing in Annexure&nbsp;C can begin. It costs "
+    "nothing.", st_body))
+
+F.append(Paragraph(
+    "Nothing here is fixed. The name, the timings, the number of members, the way they are "
+    "selected, the posts, the rules, any of it may be changed or struck out as you think "
+    "proper. I have written it out in full only so that you have something definite to "
+    "correct rather than a vague idea. Your decision on any point will be final.", st_body))
+
 F.append(Paragraph(
     "I therefore request you to kindly grant permission for the Maples Tech Club, and to allow "
     "the registrations described here to be started. I would be grateful for a few minutes of "
     "your time to explain it in person whenever it suits you. I give my word that the club will "
     "work within the timings, rules and discipline of the school.", st_body))
 
-F.append(Spacer(1, 4))
 F.append(Paragraph("Thanking you, and hoping for a favourable reply.", st_body))
-F.append(Spacer(1, 12))
+F.append(Spacer(1, 8))
 
 sig = [
     [Paragraph("Yours obediently,", st_td), Paragraph("", st_td)],
-    [Spacer(1, 20), Spacer(1, 20)],
+    [Spacer(1, 15), Spacer(1, 15)],
     [Paragraph("<b>Harsh</b><br/>Class XII &nbsp;\u00b7&nbsp; Roll No. 13<br/>"
-               "Maples Academy, Khatauli<br/><br/>"
+               "Maples Academy, Khatauli<br/>"
                "Mobile: ____________________", st_td),
      Paragraph("<b>Countersigned \u2014 Proposed Faculty Advisor</b><br/><br/>"
                "Name: ______________________________<br/><br/>"
-               "Designation / Department: ______________<br/><br/>"
+               "Designation: _________________________<br/><br/>"
                "Signature: ___________________________", st_td)],
 ]
 t = Table(sig, colWidths=[W*0.48, W*0.52])
@@ -403,16 +437,6 @@ t.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "TOP"),
                        ("LEFTPADDING", (0, 0), (-1, -1), 0)]))
 F.append(t)
 
-F.append(Spacer(1, 12))
-F.append(Rule(thick=0.5))
-F.append(Spacer(1, 4))
-F.append(Paragraph(
-    "<b>Enclosed with this application:</b> &nbsp; Annexure A, the club's rules and purpose "
-    "&nbsp;\u00b7&nbsp; Annexure B, what the school and the students get, with official links "
-    "&nbsp;\u00b7&nbsp; Annexure C, how to register, with the documents and the costs "
-    "&nbsp;\u00b7&nbsp; Annexure D, how members will be selected, and the code of conduct "
-    "&nbsp;\u00b7&nbsp; Annexure E, safeguards, what I am asking the school for, and the "
-    "one-year targets &nbsp;\u00b7&nbsp; Annexure F, an order sheet for your signature.", st_small))
 
 # ================================================================ ANNEXURE A
 F.append(PageBreak())
@@ -496,10 +520,17 @@ pur = [
     [Paragraph("6", st_tdc), Paragraph("Digitise and support school operations", st_tdb),
      Paragraph("A website that is kept up to date, an online notice board, digital forms, event photographs and a "
                "results page. Done by students, checked by staff, without paying an agency.", st_td)],
-    [Paragraph("7", st_tdc), Paragraph("Teach digital safety and AI ethics", st_tdb),
+    [Paragraph("7", st_tdc), Paragraph("Run the school's presence online", st_tdb),
+     Paragraph("With your permission the club will set up and look after the school's official pages on "
+               "Facebook, Instagram and the other platforms you approve, and will design the posters and "
+               "notices for Annual Day, Sports Day, Science Exhibition, admissions and every other school "
+               "function. Nothing is posted and nothing is printed without the Faculty Advisor approving it "
+               "in writing first. This work is presently either not done at all or paid for outside; the "
+               "club will do it free.", st_td)],
+    [Paragraph("8", st_tdc), Paragraph("Teach digital safety and AI ethics", st_tdb),
      Paragraph("Students are already using AI and social media anyway. Teaching them properly about privacy, safe "
                "behaviour online, false information and honest work protects the school as much as the student.", st_td)],
-    [Paragraph("8", st_tdc), Paragraph("Widen career horizons", st_tdb),
+    [Paragraph("9", st_tdc), Paragraph("Widen career horizons", st_tdb),
      Paragraph("Many students here will never hear about careers in software, data, design or hardware unless someone "
                "shows them, along with the free national platforms that teach these subjects.", st_td)],
 ]
@@ -510,7 +541,7 @@ F.append(Paragraph(
     "Authority comes from the Principal to the Faculty Advisor, and only then to students. No "
     "student office-bearer handles money or discipline.", st_sub))
 org = [
-    [Paragraph("Tier", st_th), Paragraph("Office", st_th), Paragraph("Held by", st_th),
+    [Paragraph("#", st_th), Paragraph("Office", st_th), Paragraph("Held by", st_th),
      Paragraph("Responsibility", st_th)],
     [Paragraph("1", st_tdc), Paragraph("Patron", st_tdb), Paragraph("The Principal", st_td),
      Paragraph("Gives permission, approves the year's plan and any outside participation, and has the final word on everything.", st_td)],
@@ -531,7 +562,7 @@ org = [
     [Paragraph("7", st_tdc), Paragraph("Open Members", st_tdb), Paragraph("Any student, Classes VI\u2013XII", st_td),
      Paragraph("Come to the open workshops and awareness sessions. There is no selection for this.", st_td)],
 ]
-F.append(table(org, [9*mm, 27*mm, 36*mm, W-72*mm]))
+F.append(table(org, [8*mm, 26*mm, 40*mm, W-74*mm]))
 
 F.append(Paragraph("A.6 &nbsp; The six domain squads", st_h1))
 sq = [
@@ -778,8 +809,8 @@ road = [
      Paragraph("Owner", st_th), Paragraph("Time", st_th), Paragraph("Cost", st_th)],
 
     [Paragraph("0", st_tdc), Paragraph("<b>Permission</b><br/>The Principal approves the club and names the "
-                                       "Faculty Advisor and the Coordinator (Annexure F).", st_td),
-     Paragraph("This application, and the signed order sheet at Annexure F.", st_td),
+                                       "Faculty Advisor and the Coordinator.", st_td),
+     Paragraph("This application, and a line in writing from the Principal naming the two teachers.", st_td),
      Paragraph("Principal", st_td), Paragraph("1 week", st_tdc), Paragraph("Nil", st_tdg)],
 
     [Paragraph("1", st_tdc), Paragraph("<b>Prove we own the domain</b><br/>Add the short verification "
@@ -878,77 +909,80 @@ t.setStyle(TableStyle([
 ]))
 F.append(t)
 
-F.append(Paragraph("D.1 &nbsp; The five stages of Core Track selection", st_h1))
-F.append(Paragraph("Held once a year in April, with a short second intake in October for "
-                   "Class VI and for students newly admitted.", st_sub))
+F.append(Paragraph("D.1 &nbsp; How the first members are chosen", st_h1))
+F.append(Paragraph("Two steps. An online test to shortlist, then one project to decide. No form to "
+                   "buy, no interview panel, no probation period and no fee.", st_sub))
 
-stages = [
-    [Paragraph("Stage", st_th), Paragraph("What happens", st_th), Paragraph("What is being judged", st_th),
-     Paragraph("Weight", st_th)],
-    [Paragraph("<b>1</b><br/><font size=7>Open Call</font>", st_tdc),
-     Paragraph("A notice on the school board and a simple form. The student writes their class, "
-               "the squad they want, why they want to join, and anything they have already tried "
-               "to make. <b>No previous knowledge of computers is needed, and none is assumed.</b>", st_td),
-     Paragraph("Only whether the student wants to be there. Nobody is rejected at this stage.", st_td),
-     Paragraph("\u2014", st_tdc)],
+F.append(Paragraph(
+    "Before the club exists there is nobody in it to run an intake, so I will conduct this "
+    "first selection myself, <b>on behalf of the School Coordinator</b> and under whatever "
+    "supervision you direct. Afterwards the President and Core Committee take it over.", st_body))
 
-    [Paragraph("<b>2</b><br/><font size=7>Aptitude</font>", st_tdc),
-     Paragraph("Thirty minutes on paper: patterns, simple reasoning, basic mathematics, and one "
-               "short written answer about a problem in the school the student would like to fix. "
-               "<b>No coding of any kind.</b>", st_td),
-     Paragraph("Thinking, curiosity, and whether they can describe a problem clearly. Not "
-               "technical skill.", st_td),
-     Paragraph("25%", st_tdc)],
+sel = [
+    [Paragraph("Step", st_th), Paragraph("What happens", st_th),
+     Paragraph("What is being judged", st_th), Paragraph("Weight", st_th)],
 
-    [Paragraph("<b>3</b><br/><font size=7>Make Something</font>", st_tdc),
-     Paragraph("One week to make one small thing, chosen from a list we put up: a poster, a "
-               "one-page website, a Scratch animation, a working circuit, a short video, a chart, "
-               "a small program. Whatever suits the squad they applied for. Beginners' attempts "
-               "are welcome and are expected.", st_td),
-     Paragraph("Effort, and the willingness to try something unfamiliar and finish it. How neat "
-               "it looks counts for very little. Finishing it counts for a lot.", st_td),
+    [Paragraph("<b>1</b><br/><font size=7>Online test</font>", st_tdc),
+     Paragraph("<b>25 questions in 30 minutes</b>, set as a Google Form, so it can be sat on a "
+               "phone or a laboratory computer and marked automatically. Objective questions on "
+               "<b>basic technical skills</b>: simple logic and patterns, elementary computer "
+               "awareness, reading instructions correctly, ordinary arithmetic. <b>No "
+               "programming is required and none is assumed.</b> Open to Classes VI to XII and "
+               "marked class-wise, so a junior is never compared with a senior.", st_td),
+     Paragraph("Clear thinking and care in reading. Not technical knowledge, and not speed.", st_td),
      Paragraph("40%", st_tdc)],
 
-    [Paragraph("<b>4</b><br/><font size=7>Conversation</font>", st_tdc),
-     Paragraph("Five to seven minutes with two Core Committee members, with the Faculty Advisor "
-               "sitting in. The student explains what they made, what went wrong while making it, "
-               "and what they want to learn next.", st_td),
-     Paragraph("Honesty, whether they can explain themselves, whether they will listen, and "
-               "whether they can work with other people.", st_td),
-     Paragraph("25%", st_tdc)],
+    [Paragraph("<b>2</b><br/><font size=7>A project</font>", st_tdc),
+     Paragraph("Everyone who clears the test makes <b>one thing, of their own choosing</b>. No "
+               "list, no fixed subject: a poster, a web page, a game, a working circuit, a short "
+               "film, a model, a useful spreadsheet, a piece of writing about technology. One "
+               "week, handed in with a few lines on what it is and what went wrong while making "
+               "it. Beginners' attempts are expected and welcome.", st_td),
+     Paragraph("Effort, and whether the student finished what they started. How polished it looks "
+               "counts for very little.", st_td),
+     Paragraph("60%", st_tdc)],
 
-    [Paragraph("<b>5</b><br/><font size=7>Induction</font>", st_tdc),
-     Paragraph("Names go up on the notice board. The student signs the code of conduct along with "
-               "a parent or guardian, and then serves <b>thirty days on probation</b>, during "
-               "which they have to attend regularly.", st_td),
-     Paragraph("Whether they keep turning up. Full membership is confirmed after the probation.", st_td),
-     Paragraph("10%<br/><font size=7>attendance</font>", st_tdc)],
+    [Paragraph("", st_tdc),
+     Paragraph("<b>Results</b> go up on the school notice board. A student who is not selected "
+               "stays a full Open Track member and may try again at the next intake.", st_td),
+     Paragraph("\u2014", st_td), Paragraph("\u2014", st_tdc)],
 ]
-F.append(table(stages, [20*mm, 68*mm, 52*mm, W-140*mm]))
+F.append(table(sel, [17*mm, 72*mm, 46*mm, W-135*mm]))
+
+F.append(Paragraph("D.1.1 &nbsp; The founding group", st_h1))
+F.append(Paragraph(
+    "A club cannot be built by a crowd on the first day. I am asking that it start with "
+    "<b>four to six students</b>: myself, my friend <b>Vidhan</b>, and two to four others from "
+    "the top of the selection above. We will set up the accounts, write the first sessions and "
+    "get the routine working, after which the club opens to the whole school. Vidhan is in "
+    "Class XII with me, so we both leave at the end of this session. That is exactly why I ask "
+    "that <b>the remaining founding places go to students of Classes VIII to X</b>. They will "
+    "have the club for years after we have gone, and they, not us, are the ones who will "
+    "really run it.", st_body))
 
 F.append(Paragraph("D.2 &nbsp; Principles binding the selection", st_h1))
 F.append(bullets([
     "<b>No fee of any kind</b> for applying, or for being a member.",
     "<b>Previous experience is not a condition.</b> A complete beginner who finishes a simple task will be placed above an experienced student who submits nothing.",
-    "<b>Places kept aside.</b> At least <b>40% of the places in every intake go to Classes VI to IX</b>, so that the club keeps renewing itself. The club will also make a point of encouraging girl students to apply, and will aim for a balanced group.",
+    "<b>Places kept aside.</b> At least <b>40% of the places in every intake go to Classes VI to IX</b>, so the club keeps renewing itself. Girl students will be actively encouraged to apply.",
     "<b>Marks are not a condition either.</b> What matters is whether a student can keep up with the club without their studies suffering, and the Faculty Advisor decides that.",
-    "<b>Everything is put up in advance.</b> The criteria and their weights are displayed before the intake starts. Any student who is not selected will be told, if they ask, what would make their next application stronger, and can apply again at the next intake.",
+    "<b>Everything is put up in advance.</b> The criteria and their weights go up before the intake starts, and any student who is not selected will be told, if they ask, what would make their next attempt stronger.",
     "<b>The Faculty Advisor can overrule</b> any selection or removal decision, and the Principal's decision is final in every case.",
-    "<b>Not being selected does not mean being shut out.</b> A student who is not taken into the Core Track stays a full Open Track member and can attend every workshop the club holds.",
+    "<b>Not being selected does not mean being shut out.</b> Such a student stays a full Open Track member and can attend every workshop the club holds.",
 ]))
 
 F.append(Paragraph("D.3 &nbsp; Continuing membership and removal", st_h1))
 F.append(Paragraph(
-    "Core membership is renewed every term on three conditions: attendance of at least 70% of "
-    "the sessions, the term project finished, and conduct found satisfactory. The Faculty "
+    "Core membership is renewed every term on three conditions: at least 70% attendance, the "
+    "term project finished, and conduct found satisfactory. The Faculty "
     "Advisor may remove a member for indiscipline, for misusing school equipment or the "
     "internet, for copying, or for breaking the code of conduct. In every such case the student "
     "will be heard first, and the matter will be reported to the Principal.", st_body))
 
 F.append(Paragraph("D.4 &nbsp; Code of Conduct \u2014 to be signed by every member", st_h1))
 F.append(Paragraph(
-    "Every selected member signs this at induction, along with a parent or guardian. The "
-    "Faculty Advisor keeps the signed copy.", st_sub))
+    "Every selected member signs this when they join. The Faculty Advisor keeps the signed "
+    "copy.", st_sub))
 
 coc = [
     [Paragraph("I, a member of the Maples Tech Club, undertake that \u2014", st_th)],
@@ -991,21 +1025,19 @@ t.setStyle(TableStyle([
     ("BACKGROUND", (0, 0), (0, 0), ACCENT),
     ("BOX", (0, 0), (-1, -1), 0.6, colors.HexColor("#9ca3af")),
     ("INNERGRID", (0, 0), (-1, -1), 0.35, RULE),
-    ("TOPPADDING", (0, 0), (-1, -1), 5.5),
-    ("BOTTOMPADDING", (0, 0), (-1, -1), 5.5),
+    ("TOPPADDING", (0, 0), (-1, -1), 3.7),
+    ("BOTTOMPADDING", (0, 0), (-1, -1), 3.7),
     ("LEFTPADDING", (0, 0), (-1, -1), 8),
     ("RIGHTPADDING", (0, 0), (-1, -1), 8),
 ]))
 F.append(t)
-F.append(Spacer(1, 10))
+F.append(Spacer(1, 7))
 
 sgn = [[Paragraph("<br/><br/>______________________________<br/>"
                   "<b>Signature of Member</b><br/>Name &amp; Class", st_td),
         Paragraph("<br/><br/>______________________________<br/>"
-                  "<b>Parent / Guardian</b><br/>Name &amp; Signature", st_td),
-        Paragraph("<br/><br/>______________________________<br/>"
                   "<b>Faculty Advisor</b><br/>Signature &amp; Date", st_td)]]
-t = Table(sgn, colWidths=[W/3]*3)
+t = Table(sgn, colWidths=[W/2]*2)
 t.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "TOP"),
                        ("LEFTPADDING", (0, 0), (-1, -1), 0),
                        ("RIGHTPADDING", (0, 0), (-1, -1), 10)]))
@@ -1034,9 +1066,8 @@ saf = [
                "single admin console.", st_td)],
     [Paragraph("Will students misuse internet access?", st_tdb),
      Paragraph("The laboratory is never used without a teacher present. Every member signs the code of "
-               "conduct, and so does a parent or guardian. Content filtering is switched on at administrator "
-               "level for all school accounts. Anything that goes wrong is reported to the Principal the "
-               "same day.", st_td)],
+               "conduct. Content filtering is switched on at administrator level for all school accounts. "
+               "Anything that goes wrong is reported to the Principal the same day.", st_td)],
     [Paragraph("Is the school's reputation at risk online?", st_tdb),
      Paragraph("Nothing goes out in the school's name without the Faculty Advisor approving it in writing "
                "first. That covers the website, notices, posters, photographs and social media. Photographs of "
@@ -1045,6 +1076,13 @@ saf = [
      Paragraph("The structure is built against exactly that. Every squad has a junior deputy. The Core "
                "Committee is elected fresh every year in Term IV. All records, passwords and project files are "
                "handed to the Faculty Advisor before the outgoing batch leaves.", st_td)],
+    [Paragraph("What if the Faculty Advisor or the Coordinator leaves the school?", st_tdb),
+     Paragraph("This is the more serious risk of the two, because the accounts are in the teacher's name. "
+               "Three things protect against it. The <b>Principal holds the administrator passwords jointly "
+               "with the Coordinator</b>, so access is never lost with one person. The accounts belong to the "
+               "school's domain and not to any individual, so a new teacher is simply made administrator in "
+               "the same console. And a written handover of passwords, records and files is required before "
+               "either teacher is relieved, exactly as it is for the outgoing students.", st_td)],
     [Paragraph("Will this cost the school money later?", st_tdb),
      Paragraph("The free plans named in Annexure B are these companies' standing education offers. There is "
                "no obligation to upgrade to a paid plan, and the school can stop using any of them whenever it "
@@ -1122,87 +1160,11 @@ F.append(callout(
     "permission, one teacher, and two hours a week.<br/><br/>"
     "<b>Harsh, Class XII, Roll No. 13</b>"))
 
-# ================================================================ ANNEXURE F
-F.append(PageBreak())
-F.append(Paragraph("ANNEXURE F", S("anx6", fontName="Times-Bold", fontSize=8.8,
-                                   textColor=ACCENT2, spaceAfter=1)))
-F.append(Paragraph("Order Sheet \u2014 For the Principal's Decision", st_doctitle))
-F.append(Paragraph("To be detached, filled in and kept in the school office", st_sub))
-F.append(Rule(thick=0.8, color=ACCENT, pad=2))
-F.append(Spacer(1, 7))
-
-F.append(Paragraph("MAPLES ACADEMY, KHATAULI", S("ordhead", fontName="Times-Bold", fontSize=12.5,
-                                                 alignment=TA_CENTER, textColor=ACCENT, spaceAfter=2)))
-F.append(Paragraph("OFFICE OF THE PRINCIPAL", S("ordhead2", fontName="Times-Bold", fontSize=9.4,
-                                                alignment=TA_CENTER, textColor=MUTED, spaceAfter=10)))
-
-F.append(Paragraph("Order No. ______________________ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "
-                   "Dated: ______ / ______ / 20______", S("ordmeta", fontSize=10, spaceAfter=12)))
-
-F.append(Paragraph(
-    f"The application dated <b>{APP_DATE}</b>, submitted by <b>Harsh</b> of Class XII, "
-    "Roll No. 13, asking for permission to start a technology club and to register the school "
-    "with education technology programmes using its existing domain <i>mapleskhatauli.com</i>, "
-    "has been considered.", st_body))
-F.append(Spacer(1, 4))
-F.append(Paragraph("<b>ORDER</b>", S("ordw", fontName="Times-Bold", fontSize=10.8,
-                                     alignment=TA_CENTER, spaceAfter=6)))
-
-dec = [
-    [Paragraph("A.", st_tdb), Paragraph("Permission to start the <b>Maples Tech Club</b> as a recognised club of the "
-                                        "school is:", st_td),
-     Paragraph("&#9744;&nbsp; GRANTED &nbsp;&nbsp;&nbsp; &#9744;&nbsp; GRANTED IN PART "
-               "&nbsp;&nbsp;&nbsp; &#9744;&nbsp; DEFERRED", st_td)],
-    [Paragraph("B.", st_tdb), Paragraph("The following teacher is nominated as <b>Faculty Advisor</b>:", st_td),
-     Paragraph("_______________________________________<br/><br/>Department: __________________________", st_td)],
-    [Paragraph("C.", st_tdb), Paragraph("The following teacher is nominated as <b>Coordinator</b>, to hold the "
-                                        "Google Admin Console and be the school's verified contact:", st_td),
-     Paragraph("_______________________________________<br/><br/>"
-               "Department: __________________________<br/><br/>"
-               "&#9744;&nbsp; Same as the Faculty Advisor above", st_td)],
-    [Paragraph("D.", st_tdb), Paragraph("Use of the computer laboratory is permitted on:", st_td),
-     Paragraph("Day: ______________ &nbsp; Time: ______________<br/><br/>"
-               "commencing ______ / ______ / 20______", st_td)],
-    [Paragraph("E.", st_tdb), Paragraph("Verifying the school's educational eligibility with Google using "
-                                        "<b><i>mapleskhatauli.com</i></b>, setting up the <b>Google Admin "
-                                        "Console</b>, and enrolling with Microsoft 365 Education and GitHub "
-                                        "Education, is:", st_td),
-     Paragraph("&#9744;&nbsp; APPROVED &nbsp;&nbsp;&nbsp; &#9744;&nbsp; APPROVED SUBJECT TO REVIEW "
-               "&nbsp;&nbsp;&nbsp; &#9744;&nbsp; NOT APPROVED", st_td)],
-    [Paragraph("F.", st_tdb), Paragraph("Optional yearly budget for materials sanctioned:", st_td),
-     Paragraph("&#8377; ______________ &nbsp; / &nbsp; &#9744; Nil at present", st_td)],
-    [Paragraph("G.", st_tdb), Paragraph("Conditions or remarks of the Principal:", st_td),
-     Paragraph("____________________________________________<br/><br/>"
-               "____________________________________________<br/><br/>"
-               "____________________________________________", st_td)],
-]
-t = Table(dec, colWidths=[9*mm, 78*mm, W-87*mm])
-t.setStyle(TableStyle([
-    ("VALIGN", (0,0), (-1,-1), "TOP"),
-    ("BOX", (0,0), (-1,-1), 0.6, colors.HexColor("#9ca3af")),
-    ("INNERGRID", (0,0), (-1,-1), 0.35, RULE),
-    ("TOPPADDING", (0,0), (-1,-1), 7), ("BOTTOMPADDING", (0,0), (-1,-1), 7),
-    ("LEFTPADDING", (0,0), (-1,-1), 6), ("RIGHTPADDING", (0,0), (-1,-1), 6),
-]))
-F.append(t)
-
-F.append(Spacer(1, 14))
-sg = [[Paragraph("<br/><br/>_________________________________<br/>"
-                 "<b>Signature &amp; Seal of the Principal</b><br/>"
-                 "Maples Academy, Khatauli", st_td),
-       Paragraph("<br/><br/>_________________________________<br/>"
-                 "<b>Faculty Advisor</b> (acceptance)<br/>Name &amp; Signature", st_td),
-       Paragraph("<br/><br/>_________________________________<br/>"
-                 "<b>Harsh</b>, Class XII, Roll No. 13<br/>Proposer", st_td)]]
-t = Table(sg, colWidths=[W/3]*3)
-t.setStyle(TableStyle([("VALIGN", (0,0), (-1,-1), "TOP"),
-                       ("LEFTPADDING", (0,0), (-1,-1), 0),
-                       ("RIGHTPADDING", (0,0), (-1,-1), 8)]))
-F.append(t)
-
+# ================================================================ CLOSING NOTE
 F.append(Spacer(1, 10))
 F.append(Rule(thick=0.5))
 F.append(Spacer(1, 5))
+
 F.append(Paragraph(
     "<b>Official websites, if you wish to check anything yourself.</b> &nbsp; "
     "Google Workspace for Education \u2014 edu.google.com/workspace-for-education &nbsp;\u00b7&nbsp; "

@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Editor / OS
+.DS_Store
+*.swp
+
+# Sandbox leftovers
+.sudo_as_admin_successful
+.cache/
+.local/
+
+# Working backups of the build scripts - not part of the project
+*.bak
+*.bak2
+*.bak3
+
+# Export artefacts (regenerate with: git bundle create ...)
+*.bundle
+maples-tech-club-repo.zip
+
+# Netlify local state
+.netlify/
+
+# Generated deploy artefacts
+mtc-plan-netlify-drop.zip

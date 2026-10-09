@@ -1,0 +1,8 @@
+# Everything the site build needs. build_site.py itself is standard library
+# only; these two are for build_pdf.py, which it calls.
+#
+# build_poster.py is NOT covered here. It needs Playwright and a headless
+# Chromium, which is far too heavy for a deploy and produces files that are not
+# part of the website. Posters are built locally and committed.
+reportlab>=4.0
+pypdf>=4.0

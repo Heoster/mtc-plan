@@ -10,10 +10,15 @@ below.
 
 | File | What it is |
 |---|---|
-| `Maples_Tech_Club_Proposal_Principal.pdf` | **The main deliverable.** A 13-page formal A4 application to the Principal, with 6 annexures and a tear-off order sheet for the Principal's signature. Print and submit. |
-| `maples-tech-club/` | The 6-page website. Open `index.html` in any browser. |
+| `Maples_Tech_Club_Proposal_Principal.pdf` | **The main deliverable.** A 12-page formal A4 application to the Principal, with 5 annexures (A–E). Dated **12 October 2026**. Print and submit. |
+| `maples-tech-club/` | The website as published — 6 pages, a 404, the PDF, plus `_headers` and `_redirects`. Open `index.html` in any browser. Committed on purpose: Netlify uploads this folder without rebuilding it. |
 | `build_pdf.py` | Regenerates the PDF (`pip install reportlab` then `python3 build_pdf.py`). |
-| `build_site.py` | Regenerates the website (`python3 build_site.py`). |
+| `build_site.py` | Regenerates the website (`python3 build_site.py`). Also calls `build_pdf.py`, so this one command rebuilds everything. |
+| `fonts/` | DejaVu Serif and Sans. Embedded in the PDF for `₹` and `☐`. Needed for the build to work anywhere without root. |
+| `netlify.toml`, `runtime.txt`, `requirements.txt` | Netlify build configuration. |
+| `deploy-netlify.sh` | Build, verify, then publish to Netlify in one command. |
+| `push.sh` | Push this repository to GitHub in one command. |
+| `NETLIFY.md`, `PUSH_TO_GITHUB.md` | Step-by-step for each, including the traps. |
 | `Maples_Tech_Club_Poster.pdf` / `.png` | **Recruitment poster, A3.** Dark version — looks best on a screen, share the PNG on the class WhatsApp groups. |
 | `Maples_Tech_Club_Poster_Print.pdf` / `.png` | Same poster, light background. **Use this one for the notice board** — it costs a fraction of the toner to print. |
 | `build_poster.py` | Regenerates all four poster files. |
@@ -60,15 +65,35 @@ from memory, so it stays fast.
 
 ## Putting the website online (free)
 
-**The simple way — GitHub Pages.**
+Two targets are set up. They do not conflict; run either or both.
 
-1. Create a GitHub account → new **public** repository named `maples-tech-club`
-2. Upload every file from the `maples-tech-club/` folder
-3. Repo **Settings → Pages → Source: main branch / root → Save**
-4. Live in ~2 minutes at `https://<your-username>.github.io/maples-tech-club/`
+**Netlify — the shorter URL, and the one to give the Principal.**
+
+The project `mtc-plan` (owner CODEEX) is already configured. One command:
+
+```bash
+NETLIFY_AUTH_TOKEN=xxxxx ./deploy-netlify.sh --prod
+```
+
+No token to hand? Drag `mtc-plan-netlify-drop.zip` onto <https://app.netlify.com/drop>.
+Full detail, including the Git-connected route: **`NETLIFY.md`**.
+
+**GitHub Pages — rebuilds itself on a schedule.**
+
+1. Create a **public** repository named `maples-tech-club`
+2. Push this project to it — see **`PUSH_TO_GITHUB.md`**, or run `./push.sh`
+3. Repo **Settings → Pages → Source: GitHub Actions**
+4. Live in two or three minutes at `https://<your-username>.github.io/maples-tech-club/`
 
 The school already owns **`mapleskhatauli.com`**, so the finished site can be pointed at
 that domain whenever the school wishes.
+
+### Fonts are committed, and that matters
+
+The PDF prints `₹` and `☐`, neither of which exists in the PDF core fonts, so DejaVu is
+embedded. Both faces live in `fonts/` and `build_pdf.py` looks there before any system
+path. That is what lets the build run on Netlify, where there is no `sudo apt-get`. Do
+not delete that folder.
 
 ### One thing to understand about the date
 
@@ -163,3 +188,36 @@ python3 build_site.py     # writes the website and copies the PDF into it
 
 Run them in that order. `build_site.py` reads the page count straight out of the PDF, so the
 website can never quote a stale number.
+
+
+## Final plan — what changed in the last revision
+
+- **Dated 12 October 2026.** Pinned in `build_pdf.py` via `APP_DATE_OVERRIDE`. Set it back to
+  `None` to go back to auto-dating. The GitHub Actions date check follows the override.
+- **Annexure F (the order sheet) was removed**, along with the "Enclosed with this application"
+  list and the "working on it for most of this year" line.
+- **Parent/guardian involvement removed everywhere** — members sign the code of conduct themselves.
+- **Selection has two steps.**
+  **Step 1 — the online test (40%)**: 25 objective questions, 30 minutes, Google Form, basic
+  technical skills, no coding, open to Classes VI–XII, marked class-wise.
+  **Step 2 — a project (60%)**: everyone who clears the test makes *one thing of their own
+  choosing*. There is no list and no fixed subject — a poster, a web page, a game, a circuit, a
+  short film, a model, a spreadsheet, a piece of writing. One week, handed in with a few lines on
+  what it is and what went wrong. Judged on effort and on finishing, not on polish.
+  The interview panel and the 30-day probation stay removed.
+- **Founding group**: Harsh, Vidhan and two to four others from the top of the selection — four to
+  six in all. **Both Harsh and Vidhan are in Class XII** and leave at the end of this session, so
+  the proposal asks that the remaining founding places go to students of **Classes VIII to X**.
+  Harsh runs the first intake on behalf of the School Coordinator; afterwards the elected
+  President and Core Committee take over.
+- **Added to the letter**: a "Why me, and not somebody else" note, a request that the Principal
+  speak to the management about domain/website access, and an explicit statement that nothing in
+  the proposal is fixed.
+- **Added**: an objective for running the school's Facebook/Instagram presence and designing
+  function posters, and a safeguard answering what happens if a *teacher* leaves, not just the founder.
+
+### One detail still blank
+**Vidhan's class is now stated — Class XII** — in the letter (ask 3), in Annexure D.1.1 and on the
+join page of the website. His **roll number** is still not stated anywhere, because it was never
+supplied and inventing it would be wrong on a document going to the Principal. Give it and it will
+be filled in everywhere in one pass.
