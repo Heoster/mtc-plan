@@ -1988,25 +1988,23 @@ proposal = f"""
   <div class="shead"><h2>What is inside the PDF</h2></div>
   <div class="grid g3">
     <div class="card"><div class="ic">{I_DOC}</div><h4>The application letter</h4>
-      <p><small>A formal letter to the Principal setting out the two-part request and the reasoning behind
-      it, with space for the proposer's and faculty advisor's signatures.</small></p></div>
-    <div class="card vi"><div class="ic">{I_USERS}</div><h4>Annexure A - Club Charter</h4>
-      <p><small>Identity, definition, vision and mission, the nine objectives, the seven-tier structure,
-      the six squads, the annual calendar and the examination-discipline rule.</small></p></div>
-    <div class="card gr"><div class="ic">{I_SPARK}</div><h4>Annexure B - Schedule of Benefits</h4>
-      <p><small>Every institutional and student benefit, with eligibility, cost and the provider's official
-      web address for independent verification - including a frank note on what is <em>not</em>
-      available in India.</small></p></div>
-    <div class="card am"><div class="ic">{I_GLOBE}</div><h4>Annexure C - Registration Roadmap</h4>
-      <p><small>Eight phases starting from the domain the school already owns, with the documents needed,
-      the owner of each step, realistic timings and the total cost.</small></p></div>
-    <div class="card"><div class="ic">{I_TROPHY}</div><h4>Annexure D - Selection &amp; Conduct</h4>
-      <p><small>The two membership tracks, the online test and the project, the founding group, the fairness
-      principles, renewal and removal rules, and the nine-point code of conduct for signature.</small></p></div>
+      <p><small>A short letter to the Principal: start the club, register the school, let four to six
+      students set it up. Space for Harsh's signature and the faculty advisor's countersignature.</small></p></div>
+    <div class="card vi"><div class="ic">{I_USERS}</div><h4>Annexure A - The club</h4>
+      <p><small>What it is, who is in charge, the six squads and the year's work. Written so it can be
+      read in a few minutes.</small></p></div>
+    <div class="card gr"><div class="ic">{I_SPARK}</div><h4>Annexure B - What the school gets</h4>
+      <p><small>Google, Microsoft, GitHub, Canva and the Atal Lab grant, each with the official link.
+      A short student list, and a frank note on two offers that do <em>not</em> apply in India.</small></p></div>
+    <div class="card am"><div class="ic">{I_GLOBE}</div><h4>Annexure C - The steps</h4>
+      <p><small>Six steps from permission to a live school website: papers, who does it, how long, cost.
+      Compulsory total: nothing.</small></p></div>
+    <div class="card"><div class="ic">{I_TROPHY}</div><h4>Annexure D - Who joins</h4>
+      <p><small>Open track (no test) and Core track (a short test, then one thing you make). A six-point
+      code of conduct for signature.</small></p></div>
     <div class="card gr"><div class="ic">{I_SHIELD}</div><h4>Annexure E - Safeguards &amp; Targets</h4>
-      <p><small>Answers to every foreseeable concern, including what happens if a teacher leaves, the
-      precise list of what is requested from the school, and the one-year target sheet the club asks to be
-      judged against.</small></p></div>
+      <p><small>The questions a Principal is entitled to ask, including what happens if a teacher leaves,
+      and the one-year sheet the club asks to be judged against.</small></p></div>
   </div>
 </div></section>
 

@@ -10,7 +10,7 @@ below.
 
 | File | What it is |
 |---|---|
-| `Maples_Tech_Club_Proposal_Principal.pdf` | **The main deliverable.** A 12-page formal A4 application to the Principal, with 5 annexures (A–E). Dated **12 October 2026**. Print and submit. |
+| `Maples_Tech_Club_Proposal_Principal.pdf` | **The main deliverable.** An 8-page formal A4 application to the Principal, with 5 annexures (A–E). Dated **15 October 2026**. Print and submit. |
 | `maples-tech-club/` | The website as published — 6 pages, a 404, the PDF, plus `_headers` and `_redirects`. Open `index.html` in any browser. Committed on purpose: Netlify uploads this folder without rebuilding it. |
 | `build_pdf.py` | Regenerates the PDF (`pip install reportlab` then `python3 build_pdf.py`). |
 | `build_site.py` | Regenerates the website (`python3 build_site.py`). Also calls `build_pdf.py`, so this one command rebuilds everything. |
